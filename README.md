@@ -1,5 +1,5 @@
-# wisdom-cli
-## Get a random quote from the Dhammapada or the Dao De jing in your teminal, with optional color output
+# eastern-wisdom-cli
+## Get a random quote from the Dhammapada or the Dao De Jing in your teminal, with optional color output
 #### *improvements and suggestions welcome*  
 - Script inspired by [fortune-mod-dhammapada](https://github.com/cpriyank/fortune-mod-dhammapada)  
 - Dhammapada text from [Gutenberg](https://www.gutenberg.org/ebooks/2017)  
