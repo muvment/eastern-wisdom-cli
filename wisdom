@@ -3014,7 +3014,10 @@ d    -> Print random Dhammapada quote without colour\n
 dc   -> Print random Dhammapada quote with colour\n
 j    -> Print random Dao De jing quote without colour\n
 jc   -> Print random Dao De jing quote with colour\n
-h    -> Show this help message\n"
+h    -> Show this help message\n
+
+MIT license\n
+Copyright (c) 2023 muvment\n"
 }
 
 case $1 in
