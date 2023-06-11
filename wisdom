@@ -1,0 +1,3044 @@
+#!/bin/bash
+
+# Inspired by https://github.com/cpriyank/fortune-mod-dhammapada
+# Dhammapada text from https://www.gutenberg.org/ebooks/2017
+# Dao De Jing text from https://github.com/qiutian00/Tao-and-Teh/blob/master/source/Tao-and-Teh-en.md
+
+# Quote array values
+
+## DHAMMAPADA
+array[0]="1. All that we are is the result of what we have thought: it is founded on our thoughts, it is made up of our thoughts. If a man speaks or acts with an evil thought, pain follows him, as the wheel follows the foot of the ox that draws the carriage."
+array[1]="1. All that we are is the result of what we have thought: it is founded on our thoughts, it is made up of our thoughts. If a man speaks or acts with an evil thought, pain follows him, as the wheel follows the foot of the ox that draws the carriage."
+array[2]="2. All that we are is the result of what we have thought: it is founded on our thoughts, it is made up of our thoughts. If a man speaks or acts with a pure thought, happiness follows him, like a shadow that never leaves him."
+array[3]="3. \"He abused me, he beat me, he defeated me, he robbed me,\"—in those who harbour such thoughts hatred will never cease."
+array[4]="4. \"He abused me, he beat me, he defeated me, he robbed me,\"—in those who do not harbour such thoughts hatred will cease."
+array[5]="5. For hatred does not cease by hatred at any time: hatred ceases by love, this is an old rule."
+array[6]="6. The world does not know that we must all come to an end here;—but those who know it, their quarrels cease at once."
+array[7]="7. He who lives looking for pleasures only, his senses uncontrolled, immoderate in his food, idle, and weak, Mara (the tempter) will certainly overthrow him, as the wind throws down a weak tree."
+array[8]="8. He who lives without looking for pleasures, his senses well controlled, moderate in his food, faithful and strong, him Mara will certainly not overthrow, any more than the wind throws down a rocky mountain."
+array[9]="9. He who wishes to put on the yellow dress without having cleansed himself from sin, who disregards temperance and truth, is unworthy of the yellow dress."
+array[10]="10. But he who has cleansed himself from sin, is well grounded in all virtues, and regards also temperance and truth, he is indeed worthy of the yellow dress."
+array[11]="11. They who imagine truth in untruth, and see untruth in truth, never arrive at truth, but follow vain desires."
+array[12]="12. They who know truth in truth, and untruth in untruth, arrive at truth, and follow true desires."
+array[13]="13. As rain breaks through an ill-thatched house, passion will break through an unreflecting mind."
+array[14]="14. As rain does not break through a well-thatched house, passion will not break through a well-reflecting mind."
+array[15]="15. The evil-doer mourns in this world, and he mourns in the next; he mourns in both. He mourns and suffers when he sees the evil of his own work."
+array[16]="16. The virtuous man delights in this world, and he delights in the next; he delights in both. He delights and rejoices, when he sees the purity of his own work."
+array[17]="17. The evil-doer suffers in this world, and he suffers in the next; he suffers in both. He suffers when he thinks of the evil he has done; he suffers more when going on the evil path."
+array[18]="18. The virtuous man is happy in this world, and he is happy in the next; he is happy in both. He is happy when he thinks of the good he has done; he is still more happy when going on the good path."
+array[19]="19. The thoughtless man, even if he can recite a large portion (of the law), but is not a doer of it, has no share in the priesthood, but is like a cowherd counting the cows of others."
+array[20]="20. The follower of the law, even if he can recite only a small portion (of the law), but, having forsaken passion and hatred and foolishness, possesses true knowledge and serenity of mind, he, caring for nothing in this world or that to come, has indeed a share in the priesthood."
+array[21]="21. Earnestness is the path of immortality (Nirvana), thoughtlessness the path of death. Those who are in earnest do not die, those who are thoughtless are as if dead already."
+array[22]="22. Those who are advanced in earnestness, having understood this clearly, delight in earnestness, and rejoice in the knowledge of the Ariyas (the elect)."
+array[23]="23. These wise people, meditative, steady, always possessed of strong powers, attain to Nirvana, the highest happiness."
+array[24]="24. If an earnest person has roused himself, if he is not forgetful, if his deeds are pure, if he acts with consideration, if he restrains himself, and lives according to law,—then his glory will increase."
+array[25]="25. By rousing himself, by earnestness, by restraint and control, the wise man may make for himself an island which no flood can overwhelm."
+array[26]="26. Fools follow after vanity, men of evil wisdom. The wise man keeps earnestness as his best jewel."
+array[27]="27. Follow not after vanity, nor after the enjoyment of love and lust! He who is earnest and meditative, obtains ample joy."
+array[28]="28. When the learned man drives away vanity by earnestness, he, the wise, climbing the terraced heights of wisdom, looks down upon the fools, serene he looks upon the toiling crowd, as one that stands on a mountain looks down upon them that stand upon the plain."
+array[29]="29. Earnest among the thoughtless, awake among the sleepers, the wise man advances like a racer, leaving behind the hack."
+array[30]="30. By earnestness did Maghavan (Indra) rise to the lordship of the gods. People praise earnestness; thoughtlessness is always blamed."
+array[31]="31. A Bhikshu (mendicant) who delights in earnestness, who looks with fear on thoughtlessness, moves about like fire, burning all his fetters, small or large."
+array[32]="32. A Bhikshu (mendicant) who delights in reflection, who looks with fear on thoughtlessness, cannot fall away (from his perfect state)—he is close upon Nirvana."
+array[33]="33. As a fletcher makes straight his arrow, a wise man makes straight his trembling and unsteady thought, which is difficult to guard, difficult to hold back."
+array[34]="34. As a fish taken from his watery home and thrown on dry ground, our thought trembles all over in order to escape the dominion of Mara (the tempter)."
+array[35]="35. It is good to tame the mind, which is difficult to hold in and flighty, rushing wherever it listeth; a tamed mind brings happiness."
+array[36]="36. Let the wise man guard his thoughts, for they are difficult to perceive, very artful, and they rush wherever they list: thoughts well guarded bring happiness."
+array[37]="37. Those who bridle their mind which travels far, moves about alone, is without a body, and hides in the chamber (of the heart), will be free from the bonds of Mara (the tempter)."
+array[38]="38. If a man's thoughts are unsteady, if he does not know the true law, if his peace of mind is troubled, his knowledge will never be perfect."
+array[39]="39. If a man's thoughts are not dissipated, if his mind is not perplexed, if he has ceased to think of good or evil, then there is no fear for him while he is watchful."
+array[40]="40. Knowing that this body is (fragile) like a jar, and making this thought firm like a fortress, one should attack Mara (the tempter) with the weapon of knowledge, one should watch him when conquered, and should never rest."
+array[41]="41. Before long, alas! this body will lie on the earth, despised, without understanding, like a useless log."
+array[42]="42. Whatever a hater may do to a hater, or an enemy to an enemy, a wrongly-directed mind will do us greater mischief."
+array[43]="43. Not a mother, not a father will do so much, nor any other relative; a well-directed mind will do us greater service."
+array[44]="44. Who shall overcome this earth, and the world of Yama (the lord of the departed), and the world of the gods? Who shall find out the plainly shown path of virtue, as a clever man finds out the (right) flower."
+array[45]="45. The disciple will overcome the earth, and the world of Yama, and the world of the gods. The disciple will find out the plainly shown path of virtue, as a clever man finds out the (right) flower."
+array[46]="46. He who knows that this body is like froth, and has learnt that it is as unsubstantial as a mirage, will break the flower-pointed arrow of Mara, and never see the king of death."
+array[47]="47. Death carries off a man who is gathering flowers and whose mind is distracted, as a flood carries off a sleeping village."
+array[48]="48. Death subdues a man who is gathering flowers, and whose mind is distracted, before he is satiated in his pleasures."
+array[49]="49. As the bee collects nectar and departs without injuring the flower, or its colour or scent, so let a sage dwell in his village."
+array[50]="50. Not the perversities of others, not their sins of commission or omission, but his own misdeeds and negligences should a sage take notice of."
+array[51]="51. Like a beautiful flower, full of colour, but without scent, are the fine but fruitless words of him who does not act accordingly."
+array[52]="52. But, like a beautiful flower, full of colour and full of scent, are the fine and fruitful words of him who acts accordingly."
+array[53]="53. As many kinds of wreaths can be made from a heap of flowers, so many good things may be achieved by a mortal when once he is born."
+array[54]="54. The scent of flowers does not travel against the wind, nor (that of) sandal-wood, or of Tagara and Mallika flowers; but the odour of good people travels even against the wind; a good man pervades every place."
+array[55]="55. Sandal-wood or Tagara, a lotus-flower, or a Vassiki, among these sorts of perfumes, the perfume of virtue is unsurpassed."
+array[56]="56. Mean is the scent that comes from Tagara and sandal-wood;—the perfume of those who possess virtue rises up to the gods as the highest."
+array[57]="57. Of the people who possess these virtues, who live without thoughtlessness, and who are emancipated through true knowledge, Mara, the tempter, never finds the way."
+array[58]="58. As on a heap of rubbish cast upon the highway the lily will grow full of sweet perfume and delight, thus the disciple of the truly enlightened Buddha shines forth by his knowledge among those who are like rubbish, among the people that walk in darkness."
+array[59]="59. As on a heap of rubbish cast upon the highway the lily will grow full of sweet perfume and delight, thus the disciple of the truly enlightened Buddha shines forth by his knowledge among those who are like rubbish, among the people that walk in darkness."
+array[60]="60. Long is the night to him who is awake; long is a mile to him who is tired; long is life to the foolish who do not know the true law."
+array[61]="61. If a traveler does not meet with one who is his better, or his equal, let him firmly keep to his solitary journey; there is no companionship with a fool."
+array[62]="62. \"These sons belong to me, and this wealth belongs to me,\" with such thoughts a fool is tormented. He himself does not belong to himself; how much less sons and wealth."
+array[63]="63. The fool who knows his foolishness, is wise at least so far. But a fool who thinks himself wise, he is called a fool indeed."
+array[64]="64. If a fool be associated with a wise man even all his life, he will perceive the truth as little as a spoon perceives the taste of soup."
+array[65]="65. If an intelligent man be associated for one minute only with a wise man, he will soon perceive the truth, as the tongue perceives the taste of soup."
+array[66]="66. Fools of little understanding have themselves for their greatest enemies, for they do evil deeds which must bear bitter fruits."
+array[67]="67. That deed is not well done of which a man must repent, and the reward of which he receives crying and with a tearful face."
+array[68]="68. No, that deed is well done of which a man does not repent, and the reward of which he receives gladly and cheerfully."
+array[69]="69. As long as the evil deed done does not bear fruit, the fool thinks it is like honey; but when it ripens, then the fool suffers grief."
+array[70]="70. Let a fool month after month eat his food (like an ascetic) with the tip of a blade of Kusa grass, yet he is not worth the sixteenth particle of those who have well weighed the law."
+array[71]="71. An evil deed, like newly-drawn milk, does not turn (suddenly); smouldering, like fire covered by ashes, it follows the fool."
+array[72]="72. And when the evil deed, after it has become known, brings sorrow to the fool, then it destroys his bright lot, nay, it cleaves his head."
+array[73]="73. Let the fool wish for a false reputation, for precedence among the Bhikshus, for lordship in the convents, for worship among other people."
+array[74]="74. \"May both the layman and he who has left the world think that this is done by me; may they be subject to me in everything which is to be done or is not to be done,\" thus is the mind of the fool, and his desire and pride increase."
+array[75]="75. \"One is the road that leads to wealth, another the road that leads to Nirvana;\" if the Bhikshu, the disciple of Buddha, has learnt this, he will not yearn for honour, he will strive after separation from the world."
+array[76]="76. If you see an intelligent man who tells you where true treasures are to be found, who shows what is to be avoided, and administers reproofs, follow that wise man; it will be better, not worse, for those who follow him."
+array[77]="77. Let him admonish, let him teach, let him forbid what is improper!—he will be beloved of the good, by the bad he will be hated."
+array[78]="78. Do not have evil-doers for friends, do not have low people for friends: have virtuous people for friends, have for friends the best of men."
+array[79]="79. He who drinks in the law lives happily with a serene mind: the sage rejoices always in the law, as preached by the elect (Ariyas)."
+array[80]="80. Well-makers lead the water (wherever they like); fletchers bend the arrow; carpenters bend a log of wood; wise people fashion themselves."
+array[81]="81. As a solid rock is not shaken by the wind, wise people falter not amidst blame and praise."
+array[82]="82. Wise people, after they have listened to the laws, become serene, like a deep, smooth, and still lake."
+array[83]="83. Good people walk on whatever befall, the good do not prattle, longing for pleasure; whether touched by happiness or sorrow wise people never appear elated or depressed."
+array[84]="84. If, whether for his own sake, or for the sake of others, a man wishes neither for a son, nor for wealth, nor for lordship, and if he does not wish for his own success by unfair means, then he is good, wise, and virtuous."
+array[85]="85. Few are there among men who arrive at the other shore (become Arhats); the other people here run up and down the shore."
+array[86]="86. But those who, when the law has been well preached to them, follow the law, will pass across the dominion of death, however difficult to overcome."
+array[87]="87. A wise man should leave the dark state (of ordinary life), and follow the bright state (of the Bhikshu). After going from his home to a homeless state, he should in his retirement look for enjoyment where there seemed to be no enjoyment. Leaving all pleasures behind, and calling nothing his own, the wise man should purge himself from all the troubles of the mind."
+array[88]="88. A wise man should leave the dark state (of ordinary life), and follow the bright state (of the Bhikshu). After going from his home to a homeless state, he should in his retirement look for enjoyment where there seemed to be no enjoyment. Leaving all pleasures behind, and calling nothing his own, the wise man should purge himself from all the troubles of the mind."
+array[89]="89. Those whose mind is well grounded in the (seven) elements of knowledge, who without clinging to anything, rejoice in freedom from attachment, whose appetites have been conquered, and who are full of light, are free (even) in this world."
+array[90]="90. There is no suffering for him who has finished his journey, and abandoned grief, who has freed himself on all sides, and thrown off all fetters."
+array[91]="91. They depart with their thoughts well-collected, they are not happy in their abode; like swans who have left their lake, they leave their house and home."
+array[92]="92. Men who have no riches, who live on recognized food, who have perceived void and unconditioned freedom (Nirvana), their path is difficult to understand, like that of birds in the air."
+array[93]="93. He whose appetites are stilled, who is not absorbed in enjoyment, who has perceived void and unconditioned freedom (Nirvana), his path is difficult to understand, like that of birds in the air."
+array[94]="94. The gods even envy him whose senses, like horses well broken in by the driver, have been subdued, who is free from pride, and free from appetites."
+array[95]="95. Such a one who does his duty is tolerant like the earth, like Indra's bolt; he is like a lake without mud; no new births are in store for him."
+array[96]="96. His thought is quiet, quiet are his word and deed, when he has obtained freedom by true knowledge, when he has thus become a quiet man."
+array[97]="97. The man who is free from credulity, but knows the uncreated, who has cut all ties, removed all temptations, renounced all desires, he is the greatest of men."
+array[98]="98. In a hamlet or in a forest, in the deep water or on the dry land, wherever venerable persons (Arhanta) dwell, that place is delightful."
+array[99]="99. Forests are delightful; where the world finds no delight, there the passionless will find delight, for they look not for pleasures."
+array[100]="100. Even though a speech be a thousand (of words), but made up of senseless words, one word of sense is better, which if a man hears, he becomes quiet."
+array[101]="101. Even though a Gatha (poem) be a thousand (of words), but made up of senseless words, one word of a Gatha is better, which if a man hears, he becomes quiet."
+array[102]="102. Though a man recite a hundred Gathas made up of senseless words, one word of the law is better, which if a man hears, he becomes quiet."
+array[103]="103. If one man conquer in battle a thousand times thousand men, and if another conquer himself, he is the greatest of conquerors."
+array[104]="104. One's own self conquered is better than all other people; not even a god, a Gandharva, not Mara with Brahman could change into defeat the victory of a man who has vanquished himself, and always lives under restraint."
+array[105]="105. One's own self conquered is better than all other people; not even a god, a Gandharva, not Mara with Brahman could change into defeat the victory of a man who has vanquished himself, and always lives under restraint."
+array[106]="106. If a man for a hundred years sacrifice month after month with a thousand, and if he but for one moment pay homage to a man whose soul is grounded (in true knowledge), better is that homage than sacrifice for a hundred years."
+array[107]="107. If a man for a hundred years worship Agni (fire) in the forest, and if he but for one moment pay homage to a man whose soul is grounded (in true knowledge), better is that homage than sacrifice for a hundred years."
+array[108]="108. Whatever a man sacrifice in this world as an offering or as an oblation for a whole year in order to gain merit, the whole of it is not worth a quarter (a farthing); reverence shown to the righteous is better."
+array[109]="109. He who always greets and constantly reveres the aged, four things will increase to him, viz. life, beauty, happiness, power."
+array[110]="110. But he who lives a hundred years, vicious and unrestrained, a life of one day is better if a man is virtuous and reflecting."
+array[111]="111. And he who lives a hundred years, ignorant and unrestrained, a life of one day is better if a man is wise and reflecting."
+array[112]="112. And he who lives a hundred years, idle and weak, a life of one day is better if a man has attained firm strength."
+array[113]="113. And he who lives a hundred years, not seeing beginning and end, a life of one day is better if a man sees beginning and end."
+array[114]="114. And he who lives a hundred years, not seeing the immortal place, a life of one day is better if a man sees the immortal place."
+array[115]="115. And he who lives a hundred years, not seeing the highest law, a life of one day is better if a man sees the highest law."
+array[116]="116. If a man would hasten towards the good, he should keep his thought away from evil; if a man does what is good slothfully, his mind delights in evil."
+array[117]="117. If a man commits a sin, let him not do it again; let him not delight in sin: pain is the outcome of evil."
+array[118]="118. If a man does what is good, let him do it again; let him delight in it: happiness is the outcome of good."
+array[119]="119. Even an evil-doer sees happiness as long as his evil deed has not ripened; but when his evil deed has ripened, then does the evil-doer see evil."
+array[120]="120. Even a good man sees evil days, as long as his good deed has not ripened; but when his good deed has ripened, then does the good man see happy days."
+array[121]="121. Let no man think lightly of evil, saying in his heart, It will not come nigh unto me. Even by the falling of water-drops a water-pot is filled; the fool becomes full of evil, even if he gather it little by little."
+array[122]="122. Let no man think lightly of good, saying in his heart, It will not come nigh unto me. Even by the falling of water-drops a water-pot is filled; the wise man becomes full of good, even if he gather it little by little."
+array[123]="123. Let a man avoid evil deeds, as a merchant, if he has few companions and carries much wealth, avoids a dangerous road; as a man who loves life avoids poison."
+array[124]="124. He who has no wound on his hand, may touch poison with his hand; poison does not affect one who has no wound; nor is there evil for one who does not commit evil."
+array[125]="125. If a man offend a harmless, pure, and innocent person, the evil falls back upon that fool, like light dust thrown up against the wind."
+array[126]="126. Some people are born again; evil-doers go to hell; righteous people go to heaven; those who are free from all worldly desires attain Nirvana."
+array[127]="127. Not in the sky, not in the midst of the sea, not if we enter into the clefts of the mountains, is there known a spot in the whole world where death could not overcome (the mortal)."
+array[129]="129. All men tremble at punishment, all men fear death; remember that you are like unto them, and do not kill, nor cause slaughter."
+array[130]="130. All men tremble at punishment, all men love life; remember that thou art like unto them, and do not kill, nor cause slaughter."
+array[131]="131. He who seeking his own happiness punishes or kills beings who also long for happiness, will not find happiness after death."
+array[132]="132. He who seeking his own happiness does not punish or kill beings who also long for happiness, will find happiness after death."
+array[133]="133. Do not speak harshly to anybody; those who are spoken to will answer thee in the same way. Angry speech is painful, blows for blows will touch thee."
+array[134]="134. If, like a shattered metal plate (gong), thou utter not, then thou hast reached Nirvana; contention is not known to thee."
+array[135]="135. As a cowherd with his staff drives his cows into the stable, so do Age and Death drive the life of men."
+array[136]="136. A fool does not know when he commits his evil deeds: but the wicked man burns by his own deeds, as if burnt by fire."
+array[137]="137. He who inflicts pain on innocent and harmless persons, will soon come to one of these ten states."
+array[138]="138. He will have cruel suffering, loss, injury of the body, heavy affliction, or loss of mind."
+array[139]="139. Or a misfortune coming from the king, or a fearful accusation, or loss of relations, or destruction of treasures."
+array[140]="140. Or lightning-fire will burn his houses; and when his body is destroyed, the fool will go to hell."
+array[141]="141. Not nakedness, not platted hair, not dirt, not fasting, or lying on the earth, not rubbing with dust, not sitting motionless, can purify a mortal who has not overcome desires."
+array[142]="142. He who, though dressed in fine apparel, exercises tranquillity, is quiet, subdued, restrained, chaste, and has ceased to find fault with all other beings, he indeed is a Brahmana, an ascetic (sramana), a friar (bhikshu)."
+array[143]="143. Is there in this world any man so restrained by humility that he does not mind reproof, as a well-trained horse the whip."
+array[144]="144. Like a well-trained horse when touched by the whip, be ye active and lively, and by faith, by virtue, by energy, by meditation, by discernment of the law you will overcome this great pain (of reproof), perfect in knowledge and in behaviour, and never forgetful."
+array[145]="145. Well-makers lead the water (wherever they like); fletchers bend the arrow; carpenters bend a log of wood; good people fashion themselves."
+array[146]="146. How is there laughter, how is there joy, as this world is always burning? Why do you not seek a light, ye who are surrounded by darkness."
+array[147]="147. Look at this dressed-up lump, covered with wounds, joined together, sickly, full of many thoughts, which has no strength, no hold."
+array[148]="148. This body is wasted, full of sickness, and frail; this heap of corruption breaks to pieces, life indeed ends in death."
+array[149]="149. Those white bones, like gourds thrown away in the autumn, what pleasure is there in looking at them."
+array[150]="150. After a stronghold has been made of the bones, it is covered with flesh and blood, and there dwell in it old age and death, pride and deceit."
+array[151]="151. The brilliant chariots of kings are destroyed, the body also approaches destruction, but the virtue of good people never approaches destruction,—thus do the good say to the good."
+array[152]="152. A man who has learnt little, grows old like an ox; his flesh grows, but his knowledge does not grow."
+array[153]="153. Looking for the maker of this tabernacle, I shall have to run through a course of many births, so long as I do not find (him); and painful is birth again and again. But now, maker of the tabernacle, thou hast been seen; thou shalt not make up this tabernacle again. All thy rafters are broken, thy ridge-pole is sundered; the mind, approaching the Eternal (visankhara, nirvana), has attained to the extinction of all desires."
+array[154]="154. Looking for the maker of this tabernacle, I shall have to run through a course of many births, so long as I do not find (him); and painful is birth again and again. But now, maker of the tabernacle, thou hast been seen; thou shalt not make up this tabernacle again. All thy rafters are broken, thy ridge-pole is sundered; the mind, approaching the Eternal (visankhara, nirvana), has attained to the extinction of all desires."
+array[155]="155. Men who have not observed proper discipline, and have not gained treasure in their youth, perish like old herons in a lake without fish."
+array[156]="156. Men who have not observed proper discipline, and have not gained treasure in their youth, lie, like broken bows, sighing after the past."
+array[157]="157. If a man hold himself dear, let him watch himself carefully; during one at least out of the three watches a wise man should be watchful."
+array[158]="158. Let each man direct himself first to what is proper, then let him teach others; thus a wise man will not suffer."
+array[159]="159. If a man make himself as he teaches others to be, then, being himself well subdued, he may subdue (others); one's own self is indeed difficult to subdue."
+array[160]="160. Self is the lord of self, who else could be the lord? With self well subdued, a man finds a lord such as few can find."
+array[161]="161. The evil done by oneself, self-begotten, self-bred, crushes the foolish, as a diamond breaks a precious stone."
+array[162]="162. He whose wickedness is very great brings himself down to that state where his enemy wishes him to be, as a creeper does with the tree which it surrounds."
+array[163]="163. Bad deeds, and deeds hurtful to ourselves, are easy to do; what is beneficial and good, that is very difficult to do."
+array[164]="164. The foolish man who scorns the rule of the venerable (Arahat), of the elect (Ariya), of the virtuous, and follows false doctrine, he bears fruit to his own destruction, like the fruits of the Katthaka reed."
+array[165]="165. By oneself the evil is done, by oneself one suffers; by oneself evil is left undone, by oneself one is purified. Purity and impurity belong to oneself, no one can purify another."
+array[166]="166. Let no one forget his own duty for the sake of another's, however great; let a man, after he has discerned his own duty, be always attentive to his duty."
+array[167]="167. Do not follow the evil law! Do not live on in thoughtlessness! Do not follow false doctrine! Be not a friend of the world."
+array[168]="168. Rouse thyself! do not be idle! Follow the law of virtue! The virtuous rests in bliss in this world and in the next."
+array[169]="169. Follow the law of virtue; do not follow that of sin. The virtuous rests in bliss in this world and in the next."
+array[170]="170. Look upon the world as a bubble, look upon it as a mirage: the king of death does not see him who thus looks down upon the world."
+array[171]="171. Come, look at this glittering world, like unto a royal chariot; the foolish are immersed in it, but the wise do not touch it."
+array[172]="172. He who formerly was reckless and afterwards became sober, brightens up this world, like the moon when freed from clouds."
+array[173]="173. He whose evil deeds are covered by good deeds, brightens up this world, like the moon when freed from clouds."
+array[174]="174. This world is dark, few only can see here; a few only go to heaven, like birds escaped from the net."
+array[175]="175. The swans go on the path of the sun, they go through the ether by means of their miraculous power; the wise are led out of this world, when they have conquered Mara and his train."
+array[176]="176. If a man has transgressed one law, and speaks lies, and scoffs at another world, there is no evil he will not do."
+array[177]="177. The uncharitable do not go to the world of the gods; fools only do not praise liberality; a wise man rejoices in liberality, and through it becomes blessed in the other world."
+array[178]="178. Better than sovereignty over the earth, better than going to heaven, better than lordship over all worlds, is the reward of the first step in holiness."
+array[179]="179. He whose conquest is not conquered again, into whose conquest no one in this world enters, by what track can you lead him, the Awakened, the Omniscient, the trackless."
+array[180]="180. He whom no desire with its snares and poisons can lead astray, by what track can you lead him, the Awakened, the Omniscient, the trackless."
+array[181]="181. Even the gods envy those who are awakened and not forgetful, who are given to meditation, who are wise, and who delight in the repose of retirement (from the world)."
+array[182]="182. Difficult (to obtain) is the conception of men, difficult is the life of mortals, difficult is the hearing of the True Law, difficult is the birth of the Awakened (the attainment of Buddhahood)."
+array[183]="183. Not to commit any sin, to do good, and to purify one's mind, that is the teaching of (all) the Awakened."
+array[184]="184. The Awakened call patience the highest penance, long-suffering the highest Nirvana; for he is not an anchorite (pravragita) who strikes others, he is not an ascetic (sramana) who insults others."
+array[185]="185. Not to blame, not to strike, to live restrained under the law, to be moderate in eating, to sleep and sit alone, and to dwell on the highest thoughts,—this is the teaching of the Awakened."
+array[186]="186. There is no satisfying lusts, even by a shower of gold pieces; he who knows that lusts have a short taste and cause pain, he is wise."
+array[187]="187. Even in heavenly pleasures he finds no satisfaction, the disciple who is fully awakened delights only in the destruction of all desires."
+array[188]="188. Men, driven by fear, go to many a refuge, to mountains and forests, to groves and sacred trees."
+array[189]="189. But that is not a safe refuge, that is not the best refuge; a man is not delivered from all pains after having gone to that refuge."
+array[190]="190. He who takes refuge with Buddha, the Law, and the Church; he who, with clear understanding, sees the four holy truths:."
+array[191]="191. Viz. pain, the origin of pain, the destruction of pain, and the eightfold holy way that leads to the quieting of pain;."
+array[192]="192. That is the safe refuge, that is the best refuge; having gone to that refuge, a man is delivered from all pain."
+array[193]="193. A supernatural person (a Buddha) is not easily found, he is not born everywhere. Wherever such a sage is born, that race prospers."
+array[194]="194. Happy is the arising of the awakened, happy is the teaching of the True Law, happy is peace in the church, happy is the devotion of those who are at peace."
+array[195]="195. He who pays homage to those who deserve homage, whether the awakened (Buddha) or their disciples, those who have overcome the host (of evils), and crossed the flood of sorrow, he who pays homage to such as have found deliverance and know no fear, his merit can never be measured by anybody."
+array[196]="196. He who pays homage to those who deserve homage, whether the awakened (Buddha) or their disciples, those who have overcome the host (of evils), and crossed the flood of sorrow, he who pays homage to such as have found deliverance and know no fear, his merit can never be measured by anybody."
+array[197]="197. Let us live happily then, not hating those who hate us! among men who hate us let us dwell free from hatred."
+array[198]="198. Let us live happily then, free from ailments among the ailing! among men who are ailing let us dwell free from ailments."
+array[199]="199. Let us live happily then, free from greed among the greedy! among men who are greedy let us dwell free from greed."
+array[200]="200. Let us live happily then, though we call nothing our own! We shall be like the bright gods, feeding on happiness."
+array[201]="201. Victory breeds hatred, for the conquered is unhappy. He who has given up both victory and defeat, he, the contented, is happy."
+array[202]="202. There is no fire like passion; there is no losing throw like hatred; there is no pain like this body; there is no happiness higher than rest."
+array[203]="203. Hunger is the worst of diseases, the body the greatest of pains; if one knows this truly, that is Nirvana, the highest happiness."
+array[204]="204. Health is the greatest of gifts, contentedness the best riches; trust is the best of relationships, Nirvana the highest happiness."
+array[205]="205. He who has tasted the sweetness of solitude and tranquillity, is free from fear and free from sin, while he tastes the sweetness of drinking in the law."
+array[206]="206. The sight of the elect (Arya) is good, to live with them is always happiness; if a man does not see fools, he will be truly happy."
+array[207]="207. He who walks in the company of fools suffers a long way; company with fools, as with an enemy, is always painful; company with the wise is pleasure, like meeting with kinsfolk."
+array[208]="208. Therefore, one ought to follow the wise, the intelligent, the learned, the much enduring, the dutiful, the elect; one ought to follow a good and wise man, as the moon follows the path of the stars."
+array[209]="209. He who gives himself to vanity, and does not give himself to meditation, forgetting the real aim (of life) and grasping at pleasure, will in time envy him who has exerted himself in meditation."
+array[210]="210. Let no man ever look for what is pleasant, or what is unpleasant. Not to see what is pleasant is pain, and it is pain to see what is unpleasant."
+array[211]="211. Let, therefore, no man love anything; loss of the beloved is evil. Those who love nothing and hate nothing, have no fetters."
+array[212]="212. From pleasure comes grief, from pleasure comes fear; he who is free from pleasure knows neither grief nor fear."
+array[213]="213. From affection comes grief, from affection comes fear; he who is free from affection knows neither grief nor fear."
+array[214]="214. From lust comes grief, from lust comes fear; he who is free from lust knows neither grief nor fear."
+array[215]="215. From love comes grief, from love comes fear; he who is free from love knows neither grief nor fear."
+array[216]="216. From greed comes grief, from greed comes fear; he who is free from greed knows neither grief nor fear."
+array[217]="217. He who possesses virtue and intelligence, who is just, speaks the truth, and does what is his own business, him the world will hold dear."
+array[218]="218. He in whom a desire for the Ineffable (Nirvana) has sprung up, who is satisfied in his mind, and whose thoughts are not bewildered by love, he is called urdhvamsrotas (carried upwards by the stream)."
+array[219]="219. Kinsmen, friends, and lovers salute a man who has been long away, and returns safe from afar."
+array[220]="220. In like manner his good works receive him who has done good, and has gone from this world to the other;—as kinsmen receive a friend on his return."
+array[221]="221. Let a man leave anger, let him forsake pride, let him overcome all bondage! No sufferings befall the man who is not attached to name and form, and who calls nothing his own."
+array[222]="222. He who holds back rising anger like a rolling chariot, him I call a real driver; other people are but holding the reins."
+array[223]="223. Let a man overcome anger by love, let him overcome evil by good; let him overcome the greedy by liberality, the liar by truth."
+array[224]="224. Speak the truth, do not yield to anger; give, if thou art asked for little; by these three steps thou wilt go near the gods."
+array[225]="225. The sages who injure nobody, and who always control their body, they will go to the unchangeable place (Nirvana), where, if they have gone, they will suffer no more."
+array[226]="226. Those who are ever watchful, who study day and night, and who strive after Nirvana, their passions will come to an end."
+array[227]="227. This is an old saying, O Atula, this is not only of to-day: \`They blame him who sits silent, they blame him who speaks much, they also blame him who says little; there is no one on earth who is not blamed.."
+array[228]="228. There never was, there never will be, nor is there now, a man who is always blamed, or a man who is always praised."
+array[229]="229. But he whom those who discriminate praise continually day after day, as without blemish, wise, rich in knowledge and virtue, who would dare to blame him, like a coin made of gold from the Gambu river? Even the gods praise him, he is praised even by Brahman."
+array[230]="230. But he whom those who discriminate praise continually day after day, as without blemish, wise, rich in knowledge and virtue, who would dare to blame him, like a coin made of gold from the Gambu river? Even the gods praise him, he is praised even by Brahman."
+array[231]="231. Beware of bodily anger, and control thy body! Leave the sins of the body, and with thy body practice virtue."
+array[232]="232. Beware of the anger of the tongue, and control thy tongue! Leave the sins of the tongue, and practice virtue with thy tongue."
+array[233]="233. Beware of the anger of the mind, and control thy mind! Leave the sins of the mind, and practice virtue with thy mind."
+array[234]="234. The wise who control their body, who control their tongue, the wise who control their mind, are indeed well controlled."
+array[235]="235. Thou art now like a sear leaf, the messengers of death (Yama) have come near to thee; thou standest at the door of thy departure, and thou hast no provision for thy journey."
+array[236]="236. Make thyself an island, work hard, be wise! When thy impurities are blown away, and thou art free from guilt, thou wilt enter into the heavenly world of the elect (Ariya)."
+array[237]="237. Thy life has come to an end, thou art come near to death (Yama), there is no resting-place for thee on the road, and thou hast no provision for thy journey."
+array[238]="238. Make thyself an island, work hard, be wise! When thy impurities are blown away, and thou art free from guilt, thou wilt not enter again into birth and decay."
+array[239]="239. Let a wise man blow off the impurities of his self, as a smith blows off the impurities of silver one by one, little by little, and from time to time."
+array[240]="240. As the impurity which springs from the iron, when it springs from it, destroys it; thus do a transgressor's own works lead him to the evil path."
+array[241]="241. The taint of prayers is non-repetition; the taint of houses, non-repair; the taint of the body is sloth; the taint of a watchman, thoughtlessness."
+array[242]="242. Bad conduct is the taint of woman, greediness the taint of a benefactor; tainted are all evil ways in this world and in the next."
+array[243]="243. But there is a taint worse than all taints,—ignorance is the greatest taint. O mendicants! throw off that taint, and become taintless."
+array[244]="244. Life is easy to live for a man who is without shame, a crow hero, a mischief-maker, an insulting, bold, and wretched fellow."
+array[245]="245. But life is hard to live for a modest man, who always looks for what is pure, who is disinterested, quiet, spotless, and intelligent."
+array[246]="246. He who destroys life, who speaks untruth, who in this world takes what is not given him, who goes to another man's wife."
+array[247]="247. And the man who gives himself to drinking intoxicating liquors, he, even in this world, digs up his own root."
+array[248]="248. O man, know this, that the unrestrained are in a bad state; take care that greediness and vice do not bring thee to grief for a long time."
+array[249]="249. The world gives according to their faith or according to their pleasure: if a man frets about the food and the drink given to others, he will find no rest either by day or by night."
+array[250]="250. He in whom that feeling is destroyed, and taken out with the very root, finds rest by day and by night."
+array[251]="251. There is no fire like passion, there is no shark like hatred, there is no snare like folly, there is no torrent like greed."
+array[252]="252. The fault of others is easily perceived, but that of oneself is difficult to perceive; a man winnows his neighbour's faults like chaff, but his own fault he hides, as a cheat hides the bad die from the gambler."
+array[253]="253. If a man looks after the faults of others, and is always inclined to be offended, his own passions will grow, and he is far from the destruction of passions."
+array[254]="254. There is no path through the air, a man is not a Samana by outward acts. The world delights in vanity, the Tathagatas (the Buddhas) are free from vanity."
+array[255]="255. There is no path through the air, a man is not a Samana by outward acts. No creatures are eternal; but the awakened (Buddha) are never shaken."
+array[256]="256. A man is not just if he carries a matter by violence; no, he who distinguishes both right and wrong, who is learned and leads others, not by violence, but by law and equity, and who is guarded by the law and intelligent, he is called just."
+array[257]="257. A man is not just if he carries a matter by violence; no, he who distinguishes both right and wrong, who is learned and leads others, not by violence, but by law and equity, and who is guarded by the law and intelligent, he is called just."
+array[258]="258. A man is not learned because he talks much; he who is patient, free from hatred and fear, he is called learned."
+array[259]="259. A man is not a supporter of the law because he talks much; even if a man has learnt little, but sees the law bodily, he is a supporter of the law, a man who never neglects the law."
+array[260]="260. A man is not an elder because his head is grey; his age may be ripe, but he is called \`Old-in-vain.."
+array[261]="261. He in whom there is truth, virtue, love, restraint, moderation, he who is free from impurity and is wise, he is called an elder."
+array[262]="262. An envious greedy, dishonest man does not become respectable by means of much talking only, or by the beauty of his complexion."
+array[263]="263. He in whom all this is destroyed, and taken out with the very root, he, when freed from hatred and wise, is called respectable."
+array[264]="264. Not by tonsure does an undisciplined man who speaks falsehood become a Samana; can a man be a Samana who is still held captive by desire and greediness."
+array[265]="265. He who always quiets the evil, whether small or large, he is called a Samana (a quiet man), because he has quieted all evil."
+array[266]="266. A man is not a mendicant (Bhikshu) simply because he asks others for alms; he who adopts the whole law is a Bhikshu, not he who only begs."
+array[267]="267. He who is above good and evil, who is chaste, who with knowledge passes through the world, he indeed is called a Bhikshu."
+array[268]="268. A man is not a Muni because he observes silence (mona, i.e. mauna), if he is foolish and ignorant; but the wise who, taking the balance, chooses the good and avoids evil, he is a Muni, and is a Muni thereby; he who in this world weighs both sides is called a Muni."
+array[269]="269. A man is not a Muni because he observes silence (mona, i.e. mauna), if he is foolish and ignorant; but the wise who, taking the balance, chooses the good and avoids evil, he is a Muni, and is a Muni thereby; he who in this world weighs both sides is called a Muni."
+array[270]="270. A man is not an elect (Ariya) because he injures living creatures; because he has pity on all living creatures, therefore is a man called Ariya."
+array[271]="271. Not only by discipline and vows, not only by much learning, not by entering into a trance, not by sleeping alone, do I earn the happiness of release which no worldling can know. Bhikshu, be not confident as long as thou hast not attained the extinction of desires."
+array[272]="272. Not only by discipline and vows, not only by much learning, not by entering into a trance, not by sleeping alone, do I earn the happiness of release which no worldling can know. Bhikshu, be not confident as long as thou hast not attained the extinction of desires."
+array[273]="273. The best of ways is the eightfold; the best of truths the four words; the best of virtues passionlessness; the best of men he who has eyes to see."
+array[274]="274. This is the way, there is no other that leads to the purifying of intelligence. Go on this way! Everything else is the deceit of Mara (the tempter)."
+array[275]="275. If you go on this way, you will make an end of pain! The way was preached by me, when I had understood the removal of the thorns (in the flesh)."
+array[276]="276. You yourself must make an effort. The Tathagatas (Buddhas) are only preachers. The thoughtful who enter the way are freed from the bondage of Mara."
+array[277]="277. \`All created things perish,' he who knows and sees this becomes passive in pain; this is the way to purity."
+array[278]="278. \`All created things are grief and pain,' he who knows and sees this becomes passive in pain; this is the way that leads to purity."
+array[279]="279. \`All forms are unreal,' he who knows and sees this becomes passive in pain; this is the way that leads to purity."
+array[280]="280. He who does not rouse himself when it is time to rise, who, though young and strong, is full of sloth, whose will and thought are weak, that lazy and idle man will never find the way to knowledge."
+array[281]="281. Watching his speech, well restrained in mind, let a man never commit any wrong with his body! Let a man but keep these three roads of action clear, and he will achieve the way which is taught by the wise."
+array[282]="282. Through zeal knowledge is gotten, through lack of zeal knowledge is lost; let a man who knows this double path of gain and loss thus place himself that knowledge may grow."
+array[283]="283. Cut down the whole forest (of lust), not a tree only! Danger comes out of the forest (of lust). When you have cut down both the forest (of lust) and its undergrowth, then, Bhikshus, you will be rid of the forest and free."
+array[284]="284. So long as the love of man towards women, even the smallest, is not destroyed, so long is his mind in bondage, as the calf that drinks milk is to its mother."
+array[285]="285. Cut out the love of self, like an autumn lotus, with thy hand! Cherish the road of peace. Nirvana has been shown by Sugata (Buddha)."
+array[286]="286. \`Here I shall dwell in the rain, here in winter and summer,' thus the fool meditates, and does not think of his death."
+array[287]="287. Death comes and carries off that man, praised for his children and flocks, his mind distracted, as a flood carries off a sleeping village."
+array[288]="288. Sons are no help, nor a father, nor relations; there is no help from kinsfolk for one whom death has seized."
+array[289]="289. A wise and good man who knows the meaning of this, should quickly clear the way that leads to Nirvana."
+array[290]="290. If by leaving a small pleasure one sees a great pleasure, let a wise man leave the small pleasure, and look to the great."
+array[291]="291. He who, by causing pain to others, wishes to obtain pleasure for himself, he, entangled in the bonds of hatred, will never be free from hatred."
+array[292]="292. What ought to be done is neglected, what ought not to be done is done; the desires of unruly, thoughtless people are always increasing."
+array[293]="293. But they whose whole watchfulness is always directed to their body, who do not follow what ought not to be done, and who steadfastly do what ought to be done, the desires of such watchful and wise people will come to an end."
+array[294]="294. A true Brahmana goes scatheless, though he have killed father and mother, and two valiant kings, though he has destroyed a kingdom with all its subjects."
+array[295]="295. A true Brahmana goes scatheless, though he have killed father and mother, and two holy kings, and an eminent man besides."
+array[296]="296. The disciples of Gotama (Buddha) are always well awake, and their thoughts day and night are always set on Buddha."
+array[297]="297. The disciples of Gotama are always well awake, and their thoughts day and night are always set on the law."
+array[298]="298. The disciples of Gotama are always well awake, and their thoughts day and night are always set on the church."
+array[299]="299. The disciples of Gotama are always well awake, and their thoughts day and night are always set on their body."
+array[300]="300. The disciples of Gotama are always well awake, and their mind day and night always delights in compassion."
+array[301]="301. The disciples of Gotama are always well awake, and their mind day and night always delights in meditation."
+array[302]="302. It is hard to leave the world (to become a friar), it is hard to enjoy the world; hard is the monastery, painful are the houses; painful it is to dwell with equals (to share everything in common) and the itinerant mendicant is beset with pain. Therefore let no man be an itinerant mendicant and he will not be beset with pain."
+array[303]="303. Whatever place a faithful, virtuous, celebrated, and wealthy man chooses, there he is respected."
+array[304]="304. Good people shine from afar, like the snowy mountains; bad people are not seen, like arrows shot by night."
+array[305]="305. He alone who, without ceasing, practices the duty of sitting alone and sleeping alone, he, subduing himself, will rejoice in the destruction of all desires alone, as if living in a forest."
+array[306]="306. He who says what is not, goes to hell; he also who, having done a thing, says I have not done it. After death both are equal, they are men with evil deeds in the next world."
+array[307]="307. Many men whose shoulders are covered with the yellow gown are ill-conditioned and unrestrained; such evil-doers by their evil deeds go to hell."
+array[308]="308. Better it would be to swallow a heated iron ball, like flaring fire, than that a bad unrestrained fellow should live on the charity of the land."
+array[309]="309. Four things does a wreckless man gain who covets his neighbour's wife,—a bad reputation, an uncomfortable bed, thirdly, punishment, and lastly, hell."
+array[310]="310. There is bad reputation, and the evil way (to hell), there is the short pleasure of the frightened in the arms of the frightened, and the king imposes heavy punishment; therefore let no man think of his neighbour's wife."
+array[311]="311. As a grass-blade, if badly grasped, cuts the arm, badly-practiced asceticism leads to hell."
+array[312]="312. An act carelessly performed, a broken vow, and hesitating obedience to discipline, all this brings no great reward."
+array[313]="313. If anything is to be done, let a man do it, let him attack it vigorously! A careless pilgrim only scatters the dust of his passions more widely."
+array[314]="314. An evil deed is better left undone, for a man repents of it afterwards; a good deed is better done, for having done it, one does not repent."
+array[315]="315. Like a well-guarded frontier fort, with defences within and without, so let a man guard himself. Not a moment should escape, for they who allow the right moment to pass, suffer pain when they are in hell."
+array[316]="316. They who are ashamed of what they ought not to be ashamed of, and are not ashamed of what they ought to be ashamed of, such men, embracing false doctrines enter the evil path."
+array[317]="317. They who fear when they ought not to fear, and fear not when they ought to fear, such men, embracing false doctrines, enter the evil path."
+array[318]="318. They who forbid when there is nothing to be forbidden, and forbid not when there is something to be forbidden, such men, embracing false doctrines, enter the evil path."
+array[319]="319. They who know what is forbidden as forbidden, and what is not forbidden as not forbidden, such men, embracing the true doctrine, enter the good path."
+array[320]="320. Silently shall I endure abuse as the elephant in battle endures the arrow sent from the bow: for the world is ill-natured."
+array[321]="321. They lead a tamed elephant to battle, the king mounts a tamed elephant; the tamed is the best among men, he who silently endures abuse."
+array[322]="322. Mules are good, if tamed, and noble Sindhu horses, and elephants with large tusks; but he who tames himself is better still."
+array[323]="323. For with these animals does no man reach the untrodden country (Nirvana), where a tamed man goes on a tamed animal, viz. on his own well-tamed self."
+array[324]="324. The elephant called Dhanapalaka, his temples running with sap, and difficult to hold, does not eat a morsel when bound; the elephant longs for the elephant grove."
+array[325]="325. If a man becomes fat and a great eater, if he is sleepy and rolls himself about, that fool, like a hog fed on wash, is born again and again."
+array[326]="326. This mind of mine went formerly wandering about as it liked, as it listed, as it pleased; but I shall now hold it in thoroughly, as the rider who holds the hook holds in the furious elephant."
+array[327]="327. Be not thoughtless, watch your thoughts! Draw yourself out of the evil way, like an elephant sunk in mud."
+array[328]="328. If a man find a prudent companion who walks with him, is wise, and lives soberly, he may walk with him, overcoming all dangers, happy, but considerate."
+array[329]="329. If a man find no prudent companion who walks with him, is wise, and lives soberly, let him walk alone, like a king who has left his conquered country behind,—like an elephant in the forest."
+array[330]="330. It is better to live alone, there is no companionship with a fool; let a man walk alone, let him commit no sin, with few wishes, like an elephant in the forest."
+array[331]="331. If an occasion arises, friends are pleasant; enjoyment is pleasant, whatever be the cause; a good work is pleasant in the hour of death; the giving up of all grief is pleasant."
+array[332]="332. Pleasant in the world is the state of a mother, pleasant the state of a father, pleasant the state of a Samana, pleasant the state of a Brahmana."
+array[333]="333. Pleasant is virtue lasting to old age, pleasant is a faith firmly rooted; pleasant is attainment of intelligence, pleasant is avoiding of sins."
+array[334]="334. The thirst of a thoughtless man grows like a creeper; he runs from life to life, like a monkey seeking fruit in the forest."
+array[335]="335. Whomsoever this fierce thirst overcomes, full of poison, in this world, his sufferings increase like the abounding Birana grass."
+array[336]="336. He who overcomes this fierce thirst, difficult to be conquered in this world, sufferings fall off from him, like water-drops from a lotus leaf."
+array[337]="337. This salutary word I tell you, \`Do ye, as many as are here assembled, dig up the root of thirst, as he who wants the sweet-scented Usira root must dig up the Birana grass, that Mara (the tempter) may not crush you again and again, as the stream crushes the reeds.."
+array[338]="338. As a tree, even though it has been cut down, is firm so long as its root is safe, and grows again, thus, unless the feeders of thirst are destroyed, the pain (of life) will return again and again."
+array[339]="339. He whose thirst running towards pleasure is exceeding strong in the thirty-six channels, the waves will carry away that misguided man, viz. his desires which are set on passion."
+array[340]="340. The channels run everywhere, the creeper (of passion) stands sprouting; if you see the creeper springing up, cut its root by means of knowledge."
+array[341]="341. A creature's pleasures are extravagant and luxurious; sunk in lust and looking for pleasure, men undergo (again and again) birth and decay."
+array[342]="342. Men, driven on by thirst, run about like a snared hare; held in fetters and bonds, they undergo pain for a long time, again and again."
+array[343]="343. Men, driven on by thirst, run about like a snared hare; let therefore the mendicant drive out thirst, by striving after passionlessness for himself."
+array[344]="344. He who having got rid of the forest (of lust) (i.e. after having reached Nirvana) gives himself over to forest-life (i.e. to lust), and who, when removed from the forest (i.e. from lust), runs to the forest (i.e. to lust), look at that man! though free, he runs into bondage."
+array[345]="345. Wise people do not call that a strong fetter which is made of iron, wood, or hemp; far stronger is the care for precious stones and rings, for sons and a wife."
+array[346]="346. That fetter wise people call strong which drags down, yields, but is difficult to undo; after having cut this at last, people leave the world, free from cares, and leaving desires and pleasures behind."
+array[347]="347. Those who are slaves to passions, run down with the stream (of desires), as a spider runs down the web which he has made himself; when they have cut this, at last, wise people leave the world free from cares, leaving all affection behind."
+array[348]="348. Give up what is before, give up what is behind, give up what is in the middle, when thou goest to the other shore of existence; if thy mind is altogether free, thou wilt not again enter into birth and decay."
+array[349]="349. If a man is tossed about by doubts, full of strong passions, and yearning only for what is delightful, his thirst will grow more and more, and he will indeed make his fetters strong."
+array[350]="350. If a man delights in quieting doubts, and, always reflecting, dwells on what is not delightful (the impurity of the body, &c.), he certainly will remove, nay, he will cut the fetter of Mara."
+array[351]="351. He who has reached the consummation, who does not tremble, who is without thirst and without sin, he has broken all the thorns of life: this will be his last body."
+array[352]="352. He who is without thirst and without affection, who understands the words and their interpretation, who knows the order of letters (those which are before and which are after), he has received his last body, he is called the great sage, the great man."
+array[353]="353. \`I have conquered all, I know all, in all conditions of life I am free from taint; I have left all, and through the destruction of thirst I am free; having learnt myself, whom shall I teach?."
+array[354]="354. The gift of the law exceeds all gifts; the sweetness of the law exceeds all sweetness; the delight in the law exceeds all delights; the extinction of thirst overcomes all pain."
+array[355]="355. Pleasures destroy the foolish, if they look not for the other shore; the foolish by his thirst for pleasures destroys himself, as if he were his own enemy."
+array[356]="356. The fields are damaged by weeds, mankind is damaged by passion: therefore a gift bestowed on the passionless brings great reward."
+array[357]="357. The fields are damaged by weeds, mankind is damaged by hatred: therefore a gift bestowed on those who do not hate brings great reward."
+array[358]="358. The fields are damaged by weeds, mankind is damaged by vanity: therefore a gift bestowed on those who are free from vanity brings great reward."
+array[359]="359. The fields are damaged by weeds, mankind is damaged by lust: therefore a gift bestowed on those who are free from lust brings great reward."
+array[360]="360. Restraint in the eye is good, good is restraint in the ear, in the nose restraint is good, good is restraint in the tongue."
+array[361]="361. In the body restraint is good, good is restraint in speech, in thought restraint is good, good is restraint in all things. A Bhikshu, restrained in all things, is freed from all pain."
+array[362]="362. He who controls his hand, he who controls his feet, he who controls his speech, he who is well controlled, he who delights inwardly, who is collected, who is solitary and content, him they call Bhikshu."
+array[363]="363. The Bhikshu who controls his mouth, who speaks wisely and calmly, who teaches the meaning and the law, his word is sweet."
+array[364]="364. He who dwells in the law, delights in the law, meditates on the law, follows the law, that Bhikshu will never fall away from the true law."
+array[365]="365. Let him not despise what he has received, nor ever envy others: a mendicant who envies others does not obtain peace of mind."
+array[366]="366. A Bhikshu who, though he receives little, does not despise what he has received, even the gods will praise him, if his life is pure, and if he is not slothful."
+array[367]="367. He who never identifies himself with name and form, and does not grieve over what is no more, he indeed is called a Bhikshu."
+array[368]="368. The Bhikshu who acts with kindness, who is calm in the doctrine of Buddha, will reach the quiet place (Nirvana), cessation of natural desires, and happiness."
+array[369]="369. O Bhikshu, empty this boat! if emptied, it will go quickly; having cut off passion and hatred thou wilt go to Nirvana."
+array[370]="370. Cut off the five (senses), leave the five, rise above the five. A Bhikshu, who has escaped from the five fetters, he is called Oghatinna, \`saved from the flood.."
+array[371]="371. Meditate, O Bhikshu, and be not heedless! Do not direct thy thought to what gives pleasure that thou mayest not for thy heedlessness have to swallow the iron ball (in hell), and that thou mayest not cry out when burning, \`This is pain.."
+array[372]="372. Without knowledge there is no meditation, without meditation there is no knowledge: he who has knowledge and meditation is near unto Nirvana."
+array[373]="373. A Bhikshu who has entered his empty house, and whose mind is tranquil, feels a more than human delight when he sees the law clearly."
+array[374]="374. As soon as he has considered the origin and destruction of the elements (khandha) of the body, he finds happiness and joy which belong to those who know the immortal (Nirvana)."
+array[375]="375. And this is the beginning here for a wise Bhikshu: watchfulness over the senses, contentedness, restraint under the law; keep noble friends whose life is pure, and who are not slothful."
+array[376]="376. Let him live in charity, let him be perfect in his duties; then in the fulness of delight he will make an end of suffering."
+array[377]="377. As the Vassika plant sheds its withered flowers, men should shed passion and hatred, O ye Bhikshus."
+array[378]="378. The Bhikshu whose body and tongue and mind are quieted, who is collected, and has rejected the baits of the world, he is called quiet."
+array[379]="379. Rouse thyself by thyself, examine thyself by thyself, thus self-protected and attentive wilt thou live happily, O Bhikshu."
+array[380]="380. For self is the lord of self, self is the refuge of self; therefore curb thyself as the merchant curbs a good horse."
+array[381]="381. The Bhikshu, full of delight, who is calm in the doctrine of Buddha will reach the quiet place (Nirvana), cessation of natural desires, and happiness."
+array[382]="382. He who, even as a young Bhikshu, applies himself to the doctrine of Buddha, brightens up this world, like the moon when free from clouds."
+array[383]="383. Stop the stream valiantly, drive away the desires, O Brahmana! When you have understood the destruction of all that was made, you will understand that which was not made."
+array[384]="384. If the Brahmana has reached the other shore in both laws (in restraint and contemplation), all bonds vanish from him who has obtained knowledge."
+array[385]="385. He for whom there is neither this nor that shore, nor both, him, the fearless and unshackled, I call indeed a Brahmana."
+array[386]="386. He who is thoughtful, blameless, settled, dutiful, without passions, and who has attained the highest end, him I call indeed a Brahmana."
+array[387]="387. The sun is bright by day, the moon shines by night, the warrior is bright in his armour, the Brahmana is bright in his meditation; but Buddha, the Awakened, is bright with splendour day and night."
+array[388]="388. Because a man is rid of evil, therefore he is called Brahmana; because he walks quietly, therefore he is called Samana; because he has sent away his own impurities, therefore he is called Pravragita (Pabbagita, a pilgrim)."
+array[389]="389. No one should attack a Brahmana, but no Brahmana (if attacked) should let himself fly at his aggressor! Woe to him who strikes a Brahmana, more woe to him who flies at his aggressor."
+array[390]="390. It advantages a Brahmana not a little if he holds his mind back from the pleasures of life; when all wish to injure has vanished, pain will cease."
+array[391]="391. Him I call indeed a Brahmana who does not offend by body, word, or thought, and is controlled on these three points."
+array[392]="392. After a man has once understood the law as taught by the Well-awakened (Buddha), let him worship it carefully, as the Brahmana worships the sacrificial fire."
+array[393]="393. A man does not become a Brahmana by his platted hair, by his family, or by birth; in whom there is truth and righteousness, he is blessed, he is a Brahmana."
+array[394]="394. What is the use of platted hair, O fool! what of the raiment of goat-skins? Within thee there is ravening, but the outside thou makest clean."
+array[395]="395. The man who wears dirty raiments, who is emaciated and covered with veins, who lives alone in the forest, and meditates, him I call indeed a Brahmana."
+array[396]="396. I do not call a man a Brahmana because of his origin or of his mother. He is indeed arrogant, and he is wealthy: but the poor, who is free from all attachments, him I call indeed a Brahmana."
+array[397]="397. Him I call indeed a Brahmana who has cut all fetters, who never trembles, is independent and unshackled."
+array[398]="398. Him I call indeed a Brahmana who has cut the strap and the thong, the chain with all that pertains to it, who has burst the bar, and is awakened."
+array[399]="399. Him I call indeed a Brahmana who, though he has committed no offence, endures reproach, bonds, and stripes, who has endurance for his force, and strength for his army."
+array[400]="400. Him I call indeed a Brahmana who is free from anger, dutiful, virtuous, without appetite, who is subdued, and has received his last body."
+array[401]="401. Him I call indeed a Brahmana who does not cling to pleasures, like water on a lotus leaf, like a mustard seed on the point of a needle."
+array[402]="402. Him I call indeed a Brahmana who, even here, knows the end of his suffering, has put down his burden, and is unshackled."
+array[403]="403. Him I call indeed a Brahmana whose knowledge is deep, who possesses wisdom, who knows the right way and the wrong, and has attained the highest end."
+array[404]="404. Him I call indeed a Brahmana who keeps aloof both from laymen and from mendicants, who frequents no houses, and has but few desires."
+array[405]="405. Him I call indeed a Brahmana who finds no fault with other beings, whether feeble or strong, and does not kill nor cause slaughter."
+array[406]="406. Him I call indeed a Brahmana who is tolerant with the intolerant, mild with fault-finders, and free from passion among the passionate."
+array[407]="407. Him I call indeed a Brahmana from whom anger and hatred, pride and envy have dropt like a mustard seed from the point of a needle."
+array[408]="408. Him I call indeed a Brahmana who utters true speech, instructive and free from harshness, so that he offend no one."
+array[409]="409. Him I call indeed a Brahmana who takes nothing in the world that is not given him, be it long or short, small or large, good or bad."
+array[410]="410. Him I call indeed a Brahmana who fosters no desires for this world or for the next, has no inclinations, and is unshackled."
+array[411]="411. Him I call indeed a Brahmana who has no interests, and when he has understood (the truth), does not say How, how? and who has reached the depth of the Immortal."
+array[412]="412. Him I call indeed a Brahmana who in this world is above good and evil, above the bondage of both, free from grief from sin, and from impurity."
+array[413]="413. Him I call indeed a Brahmana who is bright like the moon, pure, serene, undisturbed, and in whom all gaiety is extinct."
+array[414]="414. Him I call indeed a Brahmana who has traversed this miry road, the impassable world and its vanity, who has gone through, and reached the other shore, is thoughtful, guileless, free from doubts, free from attachment, and content."
+array[415]="415. Him I call indeed a Brahmana who in this world, leaving all desires, travels about without a home, and in whom all concupiscence is extinct."
+array[416]="416. Him I call indeed a Brahmana who, leaving all longings, travels about without a home, and in whom all covetousness is extinct."
+array[417]="417. Him I call indeed a Brahmana who, after leaving all bondage to men, has risen above all bondage to the gods, and is free from all and every bondage."
+array[418]="418. Him I call indeed a Brahmana who has left what gives pleasure and what gives pain, who is cold, and free from all germs (of renewed life), the hero who has conquered all the worlds."
+array[419]="419. Him I call indeed a Brahmana who knows the destruction and the return of beings everywhere, who is free from bondage, welfaring (Sugata), and awakened (Buddha)."
+array[420]="420. Him I call indeed a Brahmana whose path the gods do not know, nor spirits (Gandharvas), nor men, whose passions are extinct, and who is an Arhat (venerable)."
+array[421]="421. Him I call indeed a Brahmana who calls nothing his own, whether it be before, behind, or between, who is poor, and free from the love of the world."
+array[422]="422. Him I call indeed a Brahmana, the manly, the noble, the hero, the great sage, the conqueror, the impassible, the accomplished, the awakened."
+array[423]="423. Him I call indeed a Brahmana who knows his former abodes, who sees heaven and hell, has reached the end of births, is perfect in knowledge, a sage, and whose perfections are all perfect."
+
+## DAO DE JING
+array[424]="Chapter 1 (一章)\n
+道，可道，非恒道。名，可名，非恒名。无名，天地之始；有名，万物之母。故常无欲，以观其妙；常有欲，以观其徼。此两者同出而异名，同谓之玄。玄之又玄，众妙之门。\n
+
+The Tao that can be told of
+
+Is not the Absolute Tao;
+
+The Names that can be given
+
+Are not Absolute Names.
+
+The Nameless is the origin of Heaven and Earth;
+
+The Named is the Mother of All Things.
+
+Therefore:
+
+Oftentimes, one strips oneself of passion
+
+In order to see the Secret of Life;
+
+Oftentimes, one regards life with passion,
+
+In order to see its manifest forms.
+
+These two (the Secret and its manifestations)
+
+Are (in their nature) the same;
+
+They are given different names
+
+When they become manifest.
+
+They may both be called the Cosmic Mystery:
+
+Reaching from the Mystery into the Deeper Mystery
+
+Is the Gate to the Secret of All Life."
+array[425]="Chapter 2 (二章)\n
+天下皆知美之为美，斯恶已；皆知善之为善，斯不善矣。有无相生，难易相成，长短相形，高下相盈，音声相和，前后相随，恒也。是以圣人处无为之事，行不言之教，万物作而弗始，生而弗有，为而弗恃，功成而弗居。夫唯弗居，是以不去。\n
+
+When the people of the Earth all know beauty as beauty,
+
+There arises (the recognition of) ugliness.
+
+When the people of the Earth all know the good as good,
+
+There arises (the recognition of) evil.
+
+Therefore:
+
+Being and non-being interdepend in growth;
+
+Difficult and easy interdepend in completion;
+
+Long and short interdepend in contrast;
+
+High and low interdepend in position;
+
+Tones and voice interdepend in harmony;
+
+Front and behind interdepend in company.
+
+Therefore the Sage:
+
+Manages affairs without action;
+
+Preaches the doctrine without words;
+
+All things take their rise, but he does not turn away from them;
+
+He gives them life, but does not take possession of them;
+
+He acts, but does not appropriate;
+
+Accomplishes, but claims no credit.
+
+It is because he lays claim to no credit
+
+That the credit cannot be taken away from him."
+array[426]="Chapter 3 (三章)\n
+不尚贤，使民不争；不贵难得之货，使民不为盗；不见可欲，使民心不乱。是以圣人之治，虚其心，实其腹；弱其志，强其骨。常使民无知无欲。使夫知不敢弗为而已，则无不治。\n
+
+Exalt not the wise,
+
+So that the people shall not scheme and contend;
+
+Prize not rare objects,
+
+So that the people shall not steal;
+
+Shut out from site the things of desire,
+
+So that the people's hearts shall not be disturbed.
+
+Therefore in the government of the Sage:
+
+He keeps empty their hearts
+
+Makes full their bellies,
+
+Discourages their ambitions,
+
+Strengthens their frames;
+
+So that the people may be innocent of knowledge and desires.
+
+And the cunning ones shall not presume to interfere.
+
+By action without deeds
+
+May all live in peace."
+array[427]="Chapter 4 (四章)\n
+道冲，而用之或不盈。渊兮，似万物之宗。挫其锐，解其纷，和其光，同其尘。湛兮，似或存。吾不知谁之子，象帝之先。\n
+
+Tao is a hollow vessel,
+
+And its use is inexhaustible!
+
+Fathomless!
+
+Like the fountain head of all things,
+
+Its sharp edges rounded off,
+
+Its tangles untied,
+
+Its light tempered,
+
+Its turmoil submerged,
+
+Yet dark like deep water it seems to remain.
+
+I do not know whose Son it it,
+
+An image of what existed before God."
+array[428]="Chapter 5 (五章)\n
+天地不仁，以万物为刍狗；圣人不仁，以百姓为刍狗。天地之间，其犹橐龠乎？虚而不屈，动而愈出。多闻数穷，不如守中。\n
+
+Nature is unkind:
+
+It treats the creation like sacrificial straw-dogs.
+
+The Sage is unkind:
+
+He treats the people like sacrificial straw-dogs.
+
+How the universe is like a bellows!
+
+Empty, yet it gives a supply that never fails;
+
+The more it is worked, the more it brings forth.
+
+By many words is wit exhausted.
+
+Rather, therefore, hold to the core."
+array[429]="Chapter 6 (六章)\n
+谷神不死，是谓玄牝。玄牝之门，是谓天地根。绵绵若存，用之不勤。\n
+
+The Spirit of the Valley never dies.
+
+It is called the Mystic Female.
+
+The Door of the Mystic Female
+
+Is the root of Heaven and Earth.
+
+Continuously, continuously,
+
+It seems to remain.
+
+Draw upon it
+
+And it serves you with ease."
+array[430]="Chapter 7 (七章)\n
+天长地久。天地所以能长且久者，以其不自生，故能长生。是以圣人后其身而身先，外其身而身存。不以其无私邪？故能成其私。\n
+
+The universe is everlasting.
+
+The reason the universe is everlasting
+
+Is that it does not life for Self.
+
+Therefore it can long endure.
+
+Therefore the Sage puts himself last,
+
+And finds himself in the foremost place;
+
+Regards his body as accidental,
+
+And his body is thereby preserved.
+
+Is it not because he does not live for Self
+
+That his Self is realized?"
+
+array[431]="Chapter 8 (八章)\n
+上善若水。水善利万物而不争，居众人之所恶，故几于道。居善地，心善渊，与善仁，言善信，政善治，事善能，动善时。夫唯不争，故无尤。\n
+
+The best of men is like water;
+
+Water benefits all things
+
+And does not compete with them.
+
+It dwells in (the lowly) places that all disdain -
+
+Wherein it comes near to the Tao.
+
+In his dwelling, (the Sage) loves the (lowly) earth;
+
+In his heart, he loves what is profound;
+
+In his relations with others, he loves kindness;
+
+In his words, he loves sincerity;
+
+In government, he loves peace;
+
+In business affairs, he loves ability;
+
+In hi actions, he loves choosing the right time.
+
+It is because he does not contend
+
+That he is without reproach."
+array[432]="Chapter 9 (九章)\n
+持而盈之，不如其已。揣而锐之，不可长保。金玉满堂，莫之能守。富贵而骄，自遗其咎。功遂身退，天下之道。\n
+
+Stretch (a bow) to the very full,
+
+And you will wish you had stopped in time.
+
+Temper a (sword-edge) toits very sharpest,
+
+And the edge will not last long.
+
+When gold and jade fill your hall,
+
+You will not be able to keep them safe.
+
+To be proud with wealth and honor
+
+Is to sow seeds of one's own downfall.
+
+Retire when your work is done,
+
+Such is Heaven's way."
+array[433]="Chapter 10 (十章)\n
+载营魄抱一，能无离乎？专气致柔，能如婴儿乎？修除玄览，能无疵乎？爱民治国，能无智乎？天门开阖，能为雌乎？明白四达，能无知乎？生之、畜之，生而不有，长而不宰。是为玄德。\n
+
+In embracing the One with your soul,
+
+Can you never forsake the Tao?
+
+In controlling your vital force to achieve gentleness,
+
+Can you become like the new-born child?
+
+In cleansing and purifying your Mystic vision,
+
+Can you strive after perfection?
+
+In loving the people and governing the kingdom,
+
+Can you rule without interference?
+
+In opening and shutting the Gate of Heaven,
+
+Can you play the part of the Female?
+
+In comprehending all knowledge,
+
+Can you renounce the mind?"
+
+array[434]="Chapter 11 (十一章)\n
+三十辐共一毂，当其无，有车之用。埏埴以为器，当其无，有器之用。凿户牖以为室，当其无，有室之用。故有之以为利，无之以为用。\n
+
+Thirty spokes unite around the nave;
+
+From their not-being (loss of their individuality)
+
+Arises the utility of the wheel.
+
+Mold clay into a vessel;
+
+From its not-being (in the vessel's hollow)
+
+Arises the utility of the vessel.
+
+Cut out doors and windows in the house (-wall),
+
+From their not-being (empty space) arises the utility
+
+of the house.
+
+Therefore by the existence of things we profit.
+
+And by the non-existence of things we are served."
+array[435]="Chapter 12 (十二章)\n
+五色令人目盲；五音令人耳聋；五味令人口爽；驰骋畋猎，令人心发狂；难得之货，令人行妨。是以圣人为腹不为目，故去彼取此。\n
+
+The five colors blind the eyes of man;
+
+The five musical notes deafen the ears of man;
+
+The five flavors dull the taste of man;
+
+Horse-racing, hunting and chasing madden the minds of man;
+
+Rare, valuable goods keep their owners awake at night.
+
+Therefore the Sage:
+
+Provides for the belly and not the eye.
+
+Hence, he rejects the one and accepts the other."
+array[436]="Chapter 13 (十三章)\n
+宠辱若惊，贵大患若身。何谓宠辱若惊？宠为下，得之若惊，失之若惊，是谓宠辱若惊。何谓贵大患若身？吾所以有大患者，为吾有身，及吾无身，吾有何患？故贵以身为天下，若可寄天下；爱以身为天下，若可托天下。\n
+
+'Favor and disgrace cause one dismay;
+
+What we value and what we fear are within our Self.'
+
+What does this mean:
+
+'Favor and disgrace cause one dismay?'
+
+Those who receive a favor from above
+
+Are dismayed when they receive it,
+
+And dismayed when they lose it.
+
+What does this mean:
+
+'What we value and what we fear are within our Self?'
+
+We have fears because we have a self.
+
+When we do not regard that self as self,
+
+What have we to fear?
+
+Therefore he who values the world as his self
+
+May thenbe entrusted with the government of the world;
+
+And he who loves the world as his self -
+
+The world may then be entrusted to his care."
+array[437]="Chapter 14 (十四章)\n
+视之不见，名曰微；听之不闻，名曰希；搏之不得，名曰夷。此三者，不可致诘，故混而为一。其上不皎，其下不昧，绳绳兮不可名，复归于物。是谓无状之状，无物之象，是谓惚恍。迎之不见其首，随之不见其后。执古之道，以御今之有。能知古始，是谓道纪。\n
+
+Looked at, but cannot be seen -
+
+That is called the Invisible (yi).
+
+Listened to, but cannot be heard -
+
+That is called the Inaudible (hsi).
+
+Grasped at, but cannot be touched -
+
+That is called the Intangible (wei).
+
+These three elude our inquiries
+
+And hence blend and become One.
+
+Not by its rising, is there light,
+
+Nor by its sinking, is there darkness.
+
+Unceasing, continuous,
+
+It cannot be defined,
+
+And reverts again to the realm of nothingness.
+
+That is why it is called the Form of the Formless,
+
+The Image of Nothingness.
+
+That is why it is calledthe Elusive:
+
+Meet it and you do not see its face;
+
+Follow it and you do not see its back."
+array[438]="Chapter 15 (十五章)\n
+古之善为道者，微妙玄通，深不可识。夫唯不可识，故强为之容：豫兮，若冬涉川；犹兮，若畏四邻；俨兮，其若客；涣兮，其若凌释；敦兮，其若朴；旷兮，其若谷；混兮，其若浊。孰能浊以止？静之徐清。孰能安以久？动之徐生。保此道者，不欲盈。夫唯不盈，故能蔽而新成。\n
+
+The wise ones of old had subtle wisdom and depth of understanding,
+
+So profound that they could not be understood.
+
+And because they could not be understood,
+
+Perforce must they be so described:
+
+Cautious, like crossing a wintry stream,
+
+Irresolute, like one fearing danger all around,
+
+Grave, like one acting as guest,
+
+Self-effacing, like ice beginning to melt,
+
+Genuine, like a piece of undressed wood,
+
+Open-minded, like a valley,
+
+And mixing freely, like murky water.
+
+Who can find repose in a muddy world?
+
+By lying still, it becomes clear.
+
+Who can maintain his calm for long?
+
+By activity, it comes back to life.
+
+He who embraces this Tao
+
+Guards against being over-full.
+
+Because he guards against being over-full,
+
+He is beyond wearing out and renewal."
+array[439]="Chapter 16 (十六章)\n
+致虚极，守静笃。万物并作，吾以观复。夫物芸芸，各复归其根。归根曰静，静曰复命。复命曰常，知常曰明。不知常，妄作，凶。知常容，容乃公，公乃王，王乃天，天乃道，道乃久，殁身不殆。\n
+
+Attain the utmost in Passivity,
+
+Hold firm to the basis of Quietude.
+
+The myriad things take shape and rise to activity,
+
+But I watch them fall back to their repose.
+
+Like vegetation that luxuriantly grows
+
+But returns to the root (soil) from which it springs.
+
+To return to the root is Repose;
+
+It is called going back to one's Destiny.
+
+Going back to one's Destiny is to find the Eternal Law.
+
+To know the Eternal Law is Enlightenment.
+
+And not to know the Eternal Law
+
+Is to court disaster.
+
+He who knows the Eternal Law is tolerant;
+
+Being tolerant, he is impartial;
+
+Being impartial, he is kingly;
+
+Being kingly, he is in accord with Nature;
+
+Being in accord with Nature, he is in accord with Tao;
+
+Being in accord with Tao, he is eternal,
+
+And his whole life is preserved from harm."
+
+array[440]="Chapter 17 (十七章)\n
+太上，不知有之；其次，亲而誉之；其次，畏之；其次，侮之。信不足焉，有不信焉。悠兮，其贵言。功成事遂，百姓皆谓：「我自然」。\n
+
+Of the best rulers
+
+The people (only) know that they exist;
+
+The next best the love and praise;
+
+The next they fear;
+
+And the next they revile.
+
+When they do not command the people's faith,
+
+Some will lose faith in them,
+
+And then they resort to oaths!
+
+But (of the best) when their task is accomplished,
+
+their work done,
+
+The people all remark, 'We have done it ourselves.'"
+
+array[441]="Chapter 18 (十八章)\n
+大道废，有仁义；智慧出，有大伪；六亲不和，有孝慈；国家昏乱，有忠臣。\n
+
+On the decline of the great Tao,
+
+The doctrine of 'humanity' and 'justice' arose.
+
+When knowledge and cleverness appeared,
+
+Great hypocrisy followed in its wake.
+
+When the six relationships no longer lived at peace,
+
+There was (praise of) 'kind parents' and 'filial sons.'
+
+When a country fell into chaos and misrule,
+
+There was (praise of) 'loyal ministers.'"
+array[442]="Chapter 19 (十九章)\n
+绝圣弃智，民利百倍；绝仁弃义，民复孝慈；绝巧弃利，盗贼无有。此三者以为文，不足。故令有所属：见素抱朴，少思寡欲，绝学无忧。\n
+
+Banish wisdom, discard knowledge,
+
+And the people shall profit a hundredfold;
+
+Banish 'humanity,' discard 'justice,'
+
+And the people shall recover love of their kin;
+
+Banish cunning, discard 'utility,'
+
+And the thieves and brigands shall disappear.
+
+As these three touch the externals and are inadequate,
+
+The people have need of what they can depend upon:
+
+Reveal thy simple self,
+
+Embrace thy original nature,
+
+Check thy selfishness,
+
+Curtail thy desires."
+array[443]="Chapter 20 (二十章)\n
+唯之与阿，相去几何？美之与恶，相去若何？人之所畏，不可不畏。荒兮，其未央哉！众人熙熙，如享太牢，如春登台。我独泊兮，其未兆；沌沌兮，如婴儿之未孩；儡儡兮，若无所归。众人皆有馀，而我独若遗。我愚人之心也哉，沌沌兮！俗人昭昭，我独昏昏。俗人察察，我独闷闷。淡兮，其若海，望兮，若无止。众人皆有以，而我独顽似鄙。我独异于人，而贵食母。\n
+
+Banish learning, and vexations end.
+
+Between 'Ah\!' and 'Ough\!'
+
+How much difference is there?
+
+Between 'good' and 'evil'
+
+How much difference is there?'
+
+That which men fear
+
+Is indeed to be feared;
+
+But, alas, distant yet is the dawn (of awakening)!
+
+The people of the world are merry-making,
+
+As if partaking of the sacrificial feasts,
+
+As if mounting the terrace in spring;
+
+I alone am mild, like one unemployed,
+
+Like a new-born babe that cannot yet smile,
+
+Unattached, like one without a home.
+
+The people of the world have enough and to spare,
+
+But I am like one left out,
+
+My heart must be that of a fool,
+
+Being muddled, nebulous!
+
+The vulgar are knowing, luminous;
+
+I alone am dull, confused.
+
+The vulgar are clever, self-assured;
+
+I alone, depressed.
+
+Patient as the sea,
+
+Adrift, seemingly aimless.
+
+The people of the world all have a purpose;
+
+I alone appear stubborn and uncouth.
+
+I alone differ from the other people,
+
+And value drawing sustenance from the Mother."
+array[444]="Chapter 21 (二十一章)\n
+孔德之容，惟道是从。道之为物，惟恍惟惚。惚兮恍兮，其中有象；恍兮惚兮，其中有物；窈兮冥兮，其中有精；其精甚真，其中有信。自今及古，其名不去，以阅众甫。吾何以知众甫之状哉？以此。\n
+
+The marks of great Character
+
+Follow alone from the Tao.
+
+The thing that is called Tao
+
+Is elusive, evasive.
+
+Evasive, elusive,
+
+Yet latent in it are forms.
+
+Elusive, evasive,
+
+Yet latent in it are objects.
+
+Dark and dim,
+
+Yet latent in it is the life-force.
+
+The life-force being very true,
+
+Latent in it are evidences.
+
+From the days of old till now
+
+Its Named (manifested forms) have never ceased,
+
+By which we may view the Father of All Things.
+
+How do I know the shape of the Father of All Things?
+
+Through these (manifested forms)!"
+
+array[445]="Chapter 22 (二十二章)\n
+「曲则全，枉则直，洼则盈，敝则新，少则得，多则惑。」是以圣人抱一为天下式。不自见，故明；不自是，故彰；不自伐，故有功；不自矜，故长。夫唯不争，故天下莫能与之争。古之所谓「曲则全」者，岂虚言哉！诚全而归之。\n
+
+To yield is to be preserved whole.
+
+To be bent is to become straight.
+
+To be hollow is to be filled.
+
+To be tattered is to be renewed.
+
+To be in want is to possess.
+
+To have plenty is to be confused.
+
+Therefore the Sage embraces the One,
+
+And becomes the model of the world.
+
+He does not reveal himself,
+
+And is therefore luminous.
+
+He does not justify himself,
+
+And is therefore far-famed.
+
+He does not boast of himself,
+
+And therefore people give him credit.
+
+He does not pride himself,
+
+And is therefore the chief among men.
+
+Is it not indeed true, as the ancients say,
+
+'To yield is to be preserved whole?'
+
+Thus he is preserved and the world does him homage."
+array[446]="Chapter 23 (二十三章)\n
+希言自然。故飘风不终朝，骤雨不终日。孰为此者？天地。天地尚不能久，而况于人乎？故从事于道者，同于道；德者，同于德；失者，同于失。同于道者，道亦乐得之；同于德者，德亦乐得之；同于失者，失亦乐得之。信不足焉，有不信焉。\n
+
+Nature says few words:
+
+Hence it is that a squall lasts not a whole morning.
+
+A rainstorm continues not a whole day.
+
+Where do they come from?
+
+From Nature.
+
+Even Nature does not last long (in its utterances),
+
+How much less should human beings?
+
+Therefore it is that:
+
+He who follows the Tao is identified with the Tao.
+
+He who follows Character (Teh) is identified with
+
+Character.
+
+He who abandons (Tao) is identified with abandonment (of
+
+Tao).
+
+He who is identified with Tao -
+
+Tao is also glad to welcome him.
+
+He who is identified with character -
+
+Character is also glad to welcome him.
+
+He who is identified with abandonment -
+
+Abandonment is also glad t welcome him.
+
+He who has not enough faith
+
+Will not be able to command faith from others."
+array[447]="Chapter 24 (二十四章)\n
+企者不立；跨者不行；自见者不明；自是者不彰；自伐者无功；自矜者不长。其在道也，曰馀食赘形，物或恶之，故有道者不居。\n
+
+He who stands on tiptoe does not stand (firm);
+
+He who strains his strides does not walk (well);
+
+He who reveals himself is not luminous;
+
+He who justifies himself is not far-famed;
+
+He who boasts of himself is not given credit;
+
+He who prides himself is not chief among men.
+
+These in the eyes of Tao
+
+Are called 'the dregs and tumors of Virtue,'
+
+Which are things of disgust.
+
+Therefore the man of Tao spurns them."
+array[448]="Chapter 25 (二十五章)\n
+有物混成，先天地生。寂兮寥兮，独立而不改，周行而不殆，可以为天地母。吾不知其名，字之曰道，强为之名曰大。大曰逝，逝曰远，远曰反。故道大，天大，地大，人亦大。域中有四大，而人居其一焉。人法地，地法天，天法道，道法自然。\n
+
+Before the Heaven and Earth existed
+
+There was something nebulous:
+
+Silent, isolated,
+
+Standing alone, changing not,
+
+Eternally revolving without fail,
+
+Worthy to be the Mother of All Things.
+
+I do not know its name
+
+And address it as Tao.
+
+If forced to give it a name, I shall call it 'Great.'
+
+Being great implies reaching out in space,
+
+Reaching out in space implies far-reaching,
+
+Far-reaching implies reversion to the original point.
+
+Therefore:
+
+Tao is Great,
+
+The Heaven is great,
+
+The Earth is great,
+
+The King is also great.
+
+There are the Great Four in the universe,
+
+And the King is one of them.
+
+Man models himself after the Earth;
+
+The Earth models itself after Heaven;
+
+The Heaven models itself after Tao;
+
+Tao models itself after nature."
+array[449]="Chapter 26 (二十六章)\n
+重为轻根，静为躁君。是以君子终日行不离辎重。虽有荣观，燕处超然。奈何万乘之主，而以身轻天下？轻则失根，躁则失君。\n
+
+The Solid is the root of the light;
+
+The Quiescent is the master of the Hasty.
+
+Therefore the Sage travels all day
+
+Yet never leaves his provision-cart.
+
+In the midst of honor and glory,
+
+He lives leisurely, undisturbed.
+
+How can the ruler of a great country
+
+Make light of his body in the empire (by rushing about)?
+
+In light frivolity, the Center is lost;
+
+In hasty action, self-mastery is lost."
+array[450]="Chapter 27 (二十七章)\n
+善行，无辙迹；善言，无瑕谪；善数，不用筹策；善闭，无关楗而不可开；善结，无绳约而不可解。是以圣人常善救人，故无弃人；常善救物，故无弃物。是谓神明。故善人者，不善人之师；不善人者，善人之资。不贵其师，不爱其资，虽智大迷。是谓要妙。\n
+
+A good runner leaves no track.
+
+A good speech leaves no flaws for attack.
+
+A good reckoner makes use of no counters.
+
+A well-shut door makes use of no bolts,
+
+And yet cannot be opened.
+
+A well-tied knot makes use of no rope,
+
+And yet cannot be untied.
+
+Therefore the Sage is good at helping men;
+
+For that reason there is no rejected (useless) person.
+
+He is good at saving things;
+
+For that reason there is nothing rejected.
+
+This is called stealing the Light.
+Therefore the good man is the Teacher of the bad.
+
+And the bad man is the lesson of the good.
+
+He who neither values his teacher
+
+Nor loves the lesson
+
+Is one gone far astray,
+
+Though he be learned.
+
+Such is the subtle secret."
+array[451]="Chapter 28 (二十八章)\n
+知其雄，守其雌，为天下溪。为天下溪，常德不离。常德不离，复归于婴儿。知其荣，守其辱，为天下谷。为天下谷，常德乃足。常德乃足，复归于朴。知其白，守其黑，为天下式。为天下式，常德不忒。常德不忒，复归于无极。朴散则为器，圣人用之，则为官长。故大制无割。\n
+
+He who is aware of the Male
+
+But keeps to the Female
+
+Becomes the ravine of the world.
+
+Being the ravine of the world,
+
+He has the original character (teh) which is not
+
+cut up.
+
+And returns again to the (innocence of the) babe.
+
+He who is conscious of the white (bright)
+
+But keeps to the black (dark)
+
+Becomes the model for the world.
+
+Being the model for the world,
+
+He has the eternal power which never errs,
+
+And returns again to the Primordial Nothingness.
+
+He who is familiar with honor and glory
+
+But keeps to obscurity
+
+Becomes the valley of the world.
+
+Being the valley of the world,
+
+He has an eternal power which always suffices,
+
+And returns again to the natural integrity of uncarved
+
+wood.
+
+Break up this uncarved wood
+
+And it is shaped into vessel
+
+In the hands of the Sage
+
+They become the officials and magistrates.
+
+Therefore the great ruler does not cut up."
+array[452]="Chapter 29 (二十九章)\n
+将欲取天下而为之，吾见其不得已。天下神器，不可为也。为者败之，执者失之。物，或行或随，或嘘或吹，或强或羸，或挫或隳。是以圣人去甚，去奢，去泰。\n
+
+There are those who will conquer the world
+
+And make of it (what they conceive or desire).
+
+I see that they will not succeed.
+
+(For) the world is God's own Vessel
+
+It cannot be made (by human interference).
+
+He who makes it spoils it.
+
+He who holds it loses it.
+
+For: Some things go forward,
+
+Some things follow behind;
+
+some blow hot,
+
+And some blow cold;
+
+Some are strong,
+
+And some are weak;
+
+Some may break,
+
+And some may fall.
+
+Hence the Sage eschews excess, eschews extravagance,
+
+Eschews pride."
+array[453]="Chapter 30 (三十章)\n
+以道佐人主者，不以兵强天下，其事好还：师之所居，荆棘生焉。大军之后，必有凶年。善有果而已，不以取强。果而勿矜，果而勿伐，果而勿骄，果而不得已，果而勿强。物壮则老，是谓不道，不道早已。\n
+
+He who by Tao purposes to help the ruler of men
+
+Will oppose all conquest by force of arms.
+
+For such things are wont to rebound.
+
+Where armies are, thorns and brambles grow.
+
+The raising of a great host
+
+Is followed by a year of dearth.
+
+Therefore a good general effects his purpose and stops.
+
+He dares not rely upon the strength of arms;
+
+Effects his purpose and does not glory in it;
+
+Effects his purpose and does not boast of it;
+
+Effects his purpose and does not take pride in it;
+
+Effects his purpose as a regrettable necessity;
+
+Effects his purpose but does not love violence.
+
+(For) things age after reaching their prime.
+
+That (violence) would be against the Tao.
+
+And he who is against the Tao perishes young."
+array[454]="Chapter 31 (三十一章)\n
+夫兵者，不祥之器。物或恶之，故有道者不居。君子居则贵左，用兵则贵右，故兵者非君子之器。不祥之器，不得已而用之，恬淡为上。胜而不美，而美之者，是乐杀人。夫乐杀人者，则不可得志于天下矣。吉事尚左，凶事尚右。偏将军居左，上将军居右，言以丧礼处之。杀人之众，以悲哀泣之，战胜以丧礼处之。\n
+
+Of all things, soldiers are instruments of evil,
+
+Hated by men.
+
+Therefore the religious man (possessed of Tao) avoids them.
+
+The gentleman favors the left in civilian life,
+
+But on military occasions favors the right.
+
+Soldiers are weapons of evil.
+
+They are not the weapons of the gentleman.
+
+When the use of soldiers cannot be helped,
+
+The best policy is calm restraint.
+
+Even in victory, there is no beauty,
+
+And who calls it beautiful
+
+Is one who delights in slaughter.
+
+He who delights in slaughter
+
+Will not succeed in his ambition to rule the world.
+
+[The things of good omen favor the left.
+
+The things of ill omen favor the right.
+
+The lieutenant-general stands on the left,
+
+The general stands on the right.
+
+That is to say, it is celebrated as a Funeral Rite.]
+
+The slaying of multitudes should be mourned with sorrow.
+
+A victory should be celebrated with the Funeral Rite."
+array[455]="Chapter 32 (三十二章)\n
+道常无名。朴虽小，天下莫能臣。侯王若能守之，万物将自宾。天地相合，以降甘露，民莫之令而自均。始制有名，名亦既有，夫亦将知止。知止可以不殆。譬道之在天下，犹川谷之于江海。\n
+
+Tao is absolute and has no name.
+
+Though the uncarved wood is small,
+
+It cannot be employed (used as vessel) by anyone.
+
+If kings and barons can keep (this unspoiled nature),
+
+The whole world shall yield them lordship of their own
+
+accord.
+
+The Heaven and Earth join,
+
+And the sweet rain falls,
+
+Beyond the command of men,
+
+Yet evenly upon all.
+
+Then human civilization arose and there were names.
+
+Since there were names,
+
+It were well one knew where to stop.
+
+He who knows where to stop
+
+May be exempt from danger.
+
+Tao in the world
+
+May be compared to rivers that run into the sea."
+array[456]="Chapter 33 (三十三章)\n
+知人者智，自知者明；胜人者有力，自胜者强。知足者富。强行者有志。不失其所者久。死而不亡者寿。\n
+
+He who knows others is learned;
+
+He who knows himself is wide.
+
+He who conquers others has power of muscles;
+
+He who conquers himself is strong.
+
+He who is contented is rich.
+
+He who is determined has strength of will.
+
+He who does not lose his center endures.
+
+He who dies yet (his power) remains has long life."
+array[457]="Chapter 34 (三十四章)\n
+大道泛兮，其可左右。万物恃之而生而不辞，功成而不名有。衣养万物而不为主，可名于小；万物归焉而不为主，可名为大。以其终不自为大，故能成其大。\n
+
+The Great Tao flows everywhere,
+
+(Like a flood) it may go left or right.
+
+The myriad things derive their life from it,
+
+And it does not deny them.
+
+When its work is accomplished,
+
+It does not take possession.
+
+It clothes and feeds the myriad things,
+
+Yet does not claim them as its own.
+
+Often (regarded) without mind or passion,
+
+It may be considered small.
+
+Being the home of all things, yet claiming not,
+
+It may be considered great.
+
+Because to the end it does not claim greatness,
+
+Its greatness is achieved."
+array[458]="Chapter 35 (三十五章)\n
+执大象，天下往。往而不害，安平泰。乐与饵，过客止。道之出口，淡乎其无味，视之不足见，听之不足闻，用之不足既。\n
+
+Hold the Great Symbol
+
+and all the world follows,
+
+Follows without meeting harm,
+
+(And lives in) health, peace, commonwealth.
+
+Offer good things to eat
+
+And the wayfarer stays.
+
+But Tao is mild to the taste.
+
+Looked at, it cannot be seen;
+
+Listened to, it cannot be heard;
+
+Applied, its supply never fails."
+array[459]="Chapter 36 (三十六章)\n
+将欲歙之，必故张之；将欲弱之，必故强之；将欲废之，必故兴之；将欲取之，必故与之。是谓微明。柔弱胜刚强。鱼不可脱于渊，国之利器不可以示人。\n
+
+He who is to be made to dwindle (in power)
+
+Must first be caused to expand.
+
+He who is to be weakened
+
+Must first be made strong.
+
+He who is to be laid low
+
+Must first be exalted to power.
+
+He who is to be taken away from
+
+Must first be given,
+
+This is the Subtle Light.
+Gentleness overcomes strength:
+
+Fish should be left in the deep pool,
+
+And sharp weapons of the state should be left
+
+Where none can see them."
+array[460]="Chapter 37 (三十七章)\n
+道恒无名，侯王若能守之，万物将自化。化而欲作，吾将镇之以无名之朴。无名之朴，夫亦将不欲。不欲以静，天地将自正。\n
+
+The Tao never does,
+
+Yet through it everything is done.
+
+If princes and dukes can keep the Tao,
+
+the world will of its own accord be reformed.
+
+When reformed and rising to action,
+
+Let it be restrained by the Nameless pristine simplicity.
+
+The Nameless pristine simplicity
+
+Is stripped of desire (for contention).
+
+By stripping of desire quiescence is achieved,
+
+And the world arrives at peace of its own accord."
+array[461]="Chapter 38 (三十八章)\n
+上德不德，是以有德；下德不失德，是以无德。上德无为而无以为；下德无为而有以为。上仁为之而无以为；上义为之而有以为。上礼为之而莫之应，则攘臂而扔之。故失道而后德，失德而后仁，失仁而后义，失义而后礼。夫礼者，忠信之薄，而乱之首。前识者，道之华，而愚之始。是以大丈夫居其厚，不居其薄；居其实，不居其华。故去彼取此。\n
+
+The man of superior character is not (conscious of his) character.
+
+Hence he has character.
+
+The man of inferior character (is intent on) not losing character.
+
+Hence he is devoid of character.
+
+The man of superior character never acts,
+
+Nor ever (does so) with an ulterior motive.
+
+The man of inferior character acts,
+
+And (does so) with an ulterior motive.
+
+The man of superior kindness acts,
+
+But (does so) without an ulterior motive.
+
+The man of superior justice acts,
+
+And (does so) with an ulterior motive.
+
+(But when) the man of superior li acts and finds no response,
+
+He rolls up his sleeves to force it on others.
+
+Therefore:
+
+After Tao is lost, then (arises the doctrine of) humanity.
+
+After humanity is lost, then (arises the doctrine of) justice.
+
+After justice is lost, then (arises the doctrine of) li.
+
+Now li is the thinning out of loyalty and honesty of heart.
+
+And the beginning of chaos.
+
+The prophets are the flowering of Tao
+
+And the origin of folly.
+
+Therefore the noble man dwells in the heavy (base),
+
+And not in the thinning (end).
+
+He dwells in the fruit,
+
+And not in the flowering (expression).
+
+Therefore he rejects the one and accepts the other."
+array[462]="Chapter 39 (三十九章)\n
+昔之得一者：天得一以清；地得一以宁；神得一以灵；谷得一以盈；侯得一以为天下正。其致之。天无以清，将恐裂；地无以宁，将恐废；神无以灵，将恐歇；谷无以盈，将恐竭；侯王无以贵高，将恐蹶。故贵以贱为本，高以下为基。是以侯王自谓「孤」、「寡」、「不谷」。此非以贱为本耶？非乎？故致数誉无誉。是故不欲禄禄如玉。珞珞如石。\n
+
+There were those in ancient times possessed of the One;
+
+Through possession of the One, the Heaven was clarified,
+
+Through possession of the One, The Earth was stabilized,
+
+Through possession of the One, the gods were spiritualized,
+
+Through possession of the One, the valleys were made full,
+
+Through possession of the One, all things lived and grew,
+
+Through possession of the One, the princes and dukes
+
+becamethe ennobled of the people.
+
+that was how each became so.
+Without clarity, the Heavens would shake,
+
+Without stability, the Earth would quake,
+
+Without spiritual power, the gods would crumble,
+
+Without being filled, the valleys would crack,
+
+Without the life-giving power, all things would perish,
+
+Without the ennobling power, the princes and dukes would stumble.
+
+therefore the nobility depend upon the common man for support,
+
+And the exalted ones depend upon the lowly for their base.
+
+That is why the princes and dukes call themselves
+
+'the orphaned,' 'the lonely one,' 'the unworthy.'
+
+Is is not true then that they depend upon the common man for support?
+
+Truly, take down the parts of a chariot,
+
+And there is no chariot (left).
+
+Rather than jingle like the jade,
+
+Rumble like the rocks."
+array[463]="Chapter 40 (四十章)\n
+反者道之动；弱者道之用。天下万物生于有，有生于无。\n
+
+Reversion is the action of Tao.
+
+Gentleness is the function of Tao.
+
+The things of this world come from Being,
+
+And Being (comes) from Non-being."
+array[464]="Chapter 41 (四十一章)\n
+上士闻道，勤而行之；中士闻道，若存若亡；下士闻道，大笑之。不笑不足以为道。故建言有之：「明道若昧，进道若退，夷道若类，上德若谷，大白若辱，广德若不足，建德若偷；质真若渝，大方无隅，大器晚成，大音希声；大象无形。」道隐无名，夫唯道，善始且善成。\n
+
+When the highest type of men hear the Tao (truth),
+
+they try hard to live in accordance with it.
+
+When the mediocre type hear the Tao,
+
+they seem to be aware and yet unaware of it.
+
+When the lowest type hear the Tao,
+
+They break into loud laughter -
+
+If it were not laughed at, it would not be Tao.
+
+Therefore there is the established saying:
+
+'Who understands Tao seems dull of comprehension;
+
+Who is advance in Tao seems to slip backwards;
+
+Who moves on the even Tao (Path) seems to go up and down.'
+
+Superior character appears like a hollow (valley);
+
+Sheer white appears like tarnished;
+
+Great character appears like infirm;
+
+Pure worth appears like contaminated.
+
+Great space has no corners;
+
+Great talent takes long to mature;
+
+Great music is faintly heard;
+
+Great form has no contour;
+
+And Tao is hidden without a name.
+
+It is this Tao that is adept at lending (its power)
+
+and bringing fulfillment."
+array[465]="Chapter 42 (四十二章)\n
+道生一，一生二，二生三，三生万物。万物负阴而抱阳，冲气以为和。人之所恶，唯「孤」、「寡」、「不谷」。而王公以为称。故，物或损之而益，或益之而损。人之所教，我亦教之：「强梁者不得其死」，吾将以为教父。\n
+
+Out of Tao, One is born;
+
+Out of One, Two;
+
+Out of Two, Three;
+
+Out of Three, the created universe.
+
+The created universe carries the yin at its back
+
+and the yang in front;
+
+Through the union of the pervading principles it
+
+reaches harmony.
+
+To be 'orphaned,' 'lonely' and 'unworthy' is what men hate most.
+
+Yet the princes and dukes call themselves by such names.
+
+For sometimes things are benefited by being taken away from,
+
+And suffer by being added to.
+
+Others have taught this maxim,
+
+Which I shall teach also:
+
+'The violent man shall die a violent death.'
+
+This I shall regard as my spiritual teacher."
+array[466]="Chapter 43 (四十三章)\n
+天下之至柔，驰骋天下之至坚。无有入无间。吾是以知无为之有益。不言之教，无为之益，天下希及之。\n
+
+The softest substance of the world
+
+Goes through the hardest.
+
+That-which-is-without-form penetrates that-which-has-no-crevice;
+
+Through this I know the benefit of taking no action.
+
+The teaching without words
+
+And the benefit of taking no action
+
+Are without compare in the universe."
+array[467]="Chapter 44 (四十四章)\n
+名与身孰亲？身与货孰多？得与亡孰病？是故，甚爱必大费，多藏必厚亡。知足不辱，知止不殆，可以长久。\n
+
+Fame or one's own self, which does one love more?
+
+One's own self or material goods, which has more worth?
+
+Loss (of self) or possession (of goods), which is the greater evil?
+
+Therefore: he who loves most spends most,
+
+He who hoards much loses much.
+
+The contented man meets no disgrace;
+
+Who know when to stop runs into no danger -
+
+He can long endure."
+array[468]="Chapter 45 (四十五章)\n
+大成若缺，其用不弊。大盈若冲，其用不穷。大直若屈，大巧若拙，大辩若讷。躁胜寒，静胜热，清静为天下正。\n
+
+The highest perfection is like imperfection,
+
+And its use is never impaired.
+
+The greatest abundance seems meager,
+
+And its use will never fail.
+
+What's most straight appears devious,
+
+The greatest skill appears clumsiness;
+
+The greatest eloquence seems like stuttering.
+
+Movement overcomes cold,
+
+(But) keeping still overcomes heat.
+
+Who is calm and quiet becomes the guide for the universe."
+array[469]="Chapter 46 (四十六章)\n
+天下有道，却走马以粪。天下无道，戎马生于郊。祸莫大于不知足；咎莫大于欲得。故，知足之足，常足矣。\n
+
+When the world lives in accord with Tao,
+
+Racing horses are turned back to haul refuse carts.
+
+When the world lives not in accord with Tao,
+
+Cavalry abounds in the countryside.
+
+There is no greater curse than the lack of contentment.
+
+No greater sin than the desire for possession.
+
+Therefore he who is contented with contentment
+
+shall be always content."
+array[470]="Chapter 47 (四十七章)\n
+不出户，知天下；不窥牖，见天道。其出弥远，其知弥少。是以圣人不行而知，不见而明，不为而成。\n
+
+Without stepping outside one's doors,
+
+One can know what is happening in the world,
+
+Without looking out of one's windows,
+
+One can see the Tao of heaven.
+
+The farther one pursues knowledge,
+
+The less one knows.
+
+Therefore the Sage knows without running about,
+
+Understands without seeing,
+
+Accomplishes without doing."
+array[471]="Chapter 48 (四十八章)\n
+为学日益，为道日损。损之又损，以至于无为。无为而无不为。取天下常以无事。及其有事，不足以取天下。\n
+
+The student of knowledge (aims at) learning day by day;
+
+The student of Tao (aims at) losing day by day.
+
+By continual losing
+
+One reaches doing nothing (laissez-faire).
+
+He who conquers the world often does so by doing nothing.
+
+When one is compelled to do something,
+
+The world is already beyond his conquering."
+array[472]="Chapter 49 (四十九章)\n
+圣人常无心，以百姓心为心。善者吾善之，不善者吾亦善之，得善。信者吾信之，不信者吾亦信之，得信。圣人在天下，歙歙焉，为天下浑其心，圣人皆孩之。\n
+
+The Sage has no decided opinions and feelings,
+
+But regards the people's opinions and feelings as his own.
+
+The good ones I declare good;
+
+The bad ones I also declare good.
+
+That is the goodness of Virtue.
+
+The honest ones I believe;
+
+The liars I also believe;
+
+That is the faith of Virtue.
+
+The Sage dwells in the world peacefully, harmoniously.
+
+The people of the world are brought into a community of heart,
+
+And the Sage regards them all as his own children."
+array[473]="Chapter 50 (五十章)\n
+出生入死。生之徒，十有三；死之徒，十有三；人之生，动之死地，亦十有三。夫何故？以其生之厚。盖闻善摄生者，陵行不遇兕虎，入军不被甲兵。兕无所投其角，虎无所措其爪，兵无所容其刃。夫何故？以其无死地。\n
+
+Out of life, death enters.
+
+The companions (organs) of life are thirteen;
+
+The companions (organs) of death are (also) thirteen.
+
+What send man to death in this life are also (these) thirteen.
+
+How is it so?
+
+Because of the intense activity of multiplying life.
+
+It has been said that the who is a good preserver of hi life
+
+Meets no tigers or wild buffaloes on land,
+
+Is not vulnerable to weapons in the field of battle.
+
+The horns of the wild buffalo are powerless against him.
+
+How is it so?
+
+Because he is beyond death."
+array[474]="Chapter 51 (五十一章)\n
+道生之，德畜之，物形之，器成之。是以万物莫不尊道而贵德。道之尊，德之贵，夫莫之命而常自然。故道生之，德畜之。长之育之，亭之毒之，养之覆之，生而不有，为而不恃，长而不宰，是谓玄德。\n
+
+Tao gives them birth,
+
+Teh (character) fosters them.
+
+The material world gives them form.
+
+The circumstances of the moment complete them.
+
+Therefore all things of the universe worship Tao and exalt Teh.
+
+Tao is worshipped and Teh is exalted
+
+Without anyone's order but is so of its own accord.
+
+Therefore Tao gives them birth,
+
+Teh fosters them,
+
+Makes them grow, develops them,
+
+Gives them a harbor, a place to dwell in peace,
+
+Feeds them and shelter them.
+
+It gives them birth and does not own them,
+
+Acts (helps) and does not appropriate them,
+
+Is superior, and does not control them.
+
+This is the Mystic Virtue."
+array[475]="Chapter 52 (五十二章)\n
+天下有始，以为天下母。既得其母，以知其子。既知其子，复守其母，没身不殆。塞其兑，闭其门，终身不勤。启其兑，济其事，终身不救。见小曰明，守柔曰强。用其光，复归其明，无遗身殃，是为习常。\n
+
+There was a beginning of the universe
+
+Which may be regarded as the Mother of the Universe.
+
+From the Mother, we may know her sons.
+
+After knowing the sons, keep to the Mother.
+
+Thus one's whole life may be preserved from harm.
+
+Stop its apertures,
+
+Close its doors,
+
+And one's whole life is without toil.
+
+Open its apertures,
+
+Be busy about its affairs,
+
+And one's whole life is beyond redemption.
+
+He who can see the small is clear-sighted;
+
+He who stays by gentility is strong.
+
+use the light,
+
+And return to clear-sightedness -
+
+Thus cause not yourself later distress.
+
+This is to rest in the Absolute."
+array[476]="Chapter 53 (五十三章)\n
+使我介然有知，行于大道，唯施是畏。大道甚夷，而民好径。朝甚除，田甚芜，仓甚虚，服文采，带利剑，厌饮食，财货有馀，是为盗竽。非道也哉！
+
+If I were possessed of Austere Knowledge,
+
+Walking on the Main Path (Tao),
+
+I would avoid the by-paths.
+
+the Main path is easy to walk on,
+
+Yet people love the small by-paths.
+
+The (official) courts are spic and span,
+
+(While) the fields go untilled,
+
+And the (people's) granaries are very low.
+
+(Yet) clad in embroidered gowns,
+
+And carrying find swords,
+
+Surfeited with good food and drinks,
+
+(They are) splitting with wealth and possessions.
+
+This is to lead the world toward brigandage.
+Is this not corruption of Tao?"
+array[477]="Chapter 54 (五十四章)\n
+善建者不拔，善抱者不脱，子孙以祭祀不辍。修之于身，其德乃真；修之于家，其德乃馀；修之于乡，其德乃长；修之于邦，其德乃丰；修之于天下，其德乃普。故以身观身，以家观家，以乡观乡，以邦观邦，以天下观天下。吾何以知天下然哉？以此。\n
+
+Who is firmly established is not easily shaken.
+
+Who has a firm grasp does not easily let go.
+
+From generation to generation his ancestral sacrifices
+
+Shall be continued without fail.
+
+Cultivated in the individual, character will become genuine;
+
+Cultivated in the family, character will become abundant;
+
+Cultivated in the village, character will multiply;
+
+Cultivated in the state, character will prosper;
+
+Cultivated in the world, character will become universal.
+
+Therefore:
+
+According to (the character of ) the individual,
+
+judge the individual;
+
+According to (the character of ) the family,
+
+judge the family;
+
+According to (the character of ) the village,
+
+judge the village;
+
+According to (the character of ) the state,
+
+judge the state;
+
+According to (the character of ) the world,
+
+judge the world.
+
+How do I know this is so?
+
+By this."
+array[478]="Chapter 55 (五十五章)\n
+含「德」之厚，比于赤子。毒虫不螫，猛兽不据，攫鸟不搏。骨弱筋柔而握固。未知牝牡之合而□作，精之至也。终日号而不嗄，和之至也。知和曰常，知常曰明，益生曰祥，心使气曰强。物壮则老，谓之不道，不道早已。\n
+
+Who is rich in character
+
+Is like a child.
+
+No poisonous insects sting him,
+
+No wild beasts attack him,
+
+And no birds of prey pounce upon him.
+
+His bones are soft, his sinews tender, yet his grip is strong.
+
+Not knowing the union of male and female, yet his organs are complete,
+
+Which means his vigor is unspoiled.
+
+Crying the whole day, yet his voice never runs hoarse,
+
+Which means his (natural) harmony is perfect.
+
+To know harmony is to be in accord with the eternal,
+
+(And) to know eternity is called discerning.
+
+(But) to improve upon life is called an ill-omen;
+
+To let go the emotions through impulse is called assertiveness.
+
+(For) things age after reaching their prime;
+
+That (assertiveness) would be against Tao.
+
+And he who is against Tao perishes young."
+array[479]="Chapter 56 (五十六章)\n
+知者不言，言者不知。塞其兑，闭其门，挫其锐，解其纷，和其光，同其尘，是谓玄同。故不可得而亲，不可得而疏；不可得而利，不可得而害；不可得而贵，不可得而贱。故为天下贵。\n
+
+He who knows does not speak;
+
+He who speaks does not know.
+
+Fill up its apertures,
+
+Close its doors,
+
+Dull its edges,
+
+Untie its tangles,
+
+Soften its light,
+
+Submerge its turmoil,
+
+This is the Mystic Unity.
+Then love and hatred cannot touch him.
+
+Profit and loss cannot reach him.
+
+Honor and disgrace cannot affect him.
+
+Therefore is he always the honored one of the world."
+array[480]="Chapter 57 (五十七章)\n
+以正治国，以奇用兵，以无事取天下。吾何以知其然哉？以此：天下多忌讳，而民弥贫；人多利器，国家滋昏；人多伎巧，奇物滋起；法令滋彰，盗贼多有。故圣人云：「我无为，而民自化；我好静，而民自正；我无事，而民自富；我无欲，而民自朴。」
+
+Rule a kingdom by the Normal.
+
+Fight a battle by (abnormal) tactics of surprise.
+
+Win the world by doing nothing.
+
+How do I know it is so?
+
+Through this: -
+
+The more prohibitions there are,
+
+The poorer the people become.
+
+The more sharp weapons there are,
+
+The greater the chaos in the state.
+
+The more skills of technique,
+
+The more cunning things are produced.
+
+The greater the number of statutes,
+
+The greater the number of thieves and
+
+brigands.
+
+Therefore the sage says:
+
+I do nothing and the people are reformed of themselves.
+
+I love quietude and the people are righteous of themselves.
+
+I deal in no business and the people grow rich by themselves.
+
+I have no desires and the people are simple
+
+and honest by themselves."
+array[481]="Chapter 58 (五十八章)\n
+其政闷闷，其民淳淳；其政察察，其民缺缺。祸兮，福之所倚，福兮，祸之所伏。孰知其极？其无正。正复为奇，善复为妖。人之迷，其日固久！是以圣人方而不割，廉而不刿，直而不肆，光而不耀。\n
+
+When the government is lazy and dull,
+
+Its people are unspoiled;
+
+When the government is efficient and smart,
+
+Its people are discontented.
+
+Disaster is the avenue of fortune,
+
+(And) fortune is the concealment for disaster.
+
+Who would be able to know its ultimate results?
+
+(As it is), there would never be the normal.
+
+But the normal would (immediately) revert to the deceitful.
+
+And the good revert to the sinister.
+
+Thus long has mankind gone astray!
+
+Therefore the Sage is square (has firm principles),
+
+but not cutting (sharp-cornered),
+
+Has integrity but does not hurt (others),
+
+Is straight, but not high-handed,
+
+Bright, but not dazzling."
+array[482]="Chapter 59 (五十九章)\n
+治人、事天，莫若啬。夫为啬，是谓早服，早服谓之重积德。重积德则无不克。无不克则莫知其极。莫知其极，可以有国。有国之母，可以长久。是谓深根固柢，长生久视之道。\n
+
+In managing human affairs, there is no better rule
+
+than to be sparing.
+
+To be sparing is to forestall;
+
+To forestall is to be prepared and strengthened;
+
+To be prepared and strengthened is to be ever-victorious;
+
+To be ever-victorious is to have infinite capacity;
+
+He who has infinite capacity is fit to rule a country,
+
+And the Mother (principle) of a ruling country can long endure.
+
+This is to be firmly rooted, to have deep strength,
+
+The road to immortality and enduring vision."
+array[483]="Chapter 60 (六十章)\n
+治大国若烹小鲜。以道莅天下，其鬼不神。非其鬼不神，其神不伤人。非其神不伤人，圣人亦不伤人。夫两不相伤，故德交归焉。\n
+
+Rule a big country as you would fry small fish.
+
+Who rules the world in accord with Tao
+
+Shall find that the spirits lose their power.
+
+It is not that the spirits lose their power,
+
+But that they cease to do people harm.
+
+It is not (only) that they cease to do people harm,
+
+The Sage (himself) also does no harm to the people.
+
+When both do not do each other harm,
+
+The original character is restored."
+array[484]="Chapter 61 (六十一章)\n
+大国者下流，天下之牝，天下之交。牝常以静胜牡，以静为下。故大国以下小国，则取小国；小国以下大国，则取大国。故或下以取，或下而取。大国不过欲兼畜人，小国不过欲入事人。夫两者各得所欲，大者宜为下。\n
+
+A big country (should be like) the delta low-regions,
+
+Being the concourse of the world,
+
+(And) the Female of the world.
+
+The Female overcomes the Male by quietude,
+
+And achieves the lowly position by quietude.
+
+Therefore if a big country places itself below a small country
+
+It absorbs the small country.
+
+(And) if a small country places itself below a big country,
+
+It absorbs the big country.
+
+Therefore some place themselves low to absorb (others),
+
+Some are (naturally) low and absorb (others).
+
+What a big country wants is but to shelter
+
+others,
+
+And what a small country wants is but
+
+to be able to
+
+come in and be sheltered.
+
+Thus (considering) that both may have what they want,
+
+A big country ought to place itself low."
+array[485]="Chapter 62 (六十二章)\n
+道者，万物之奥。善人之宝，不善人之所保。美言可以市尊，美行可以加人。人之不善，何弃之有？故立天子，置三公，虽有拱璧以先驷马，不如坐进此道。古之所以贵此道者何？不曰：求以得，有罪以免邪？故为天下贵。\n
+
+Tao is the mysterious secret of the universe,
+
+The good man's treasure,
+
+And the bad man's refuge.
+
+Beautiful saying can be sold at the market,r /> Noble conduct can be presented as a gift.
+
+Though there be bad people,
+
+Why reject them?
+
+Therefore on the crowning of an emperor,
+
+On the appointment of the Three Ministers,
+
+Rather than send tributes of jade and teams of four horses,
+
+Send in the tribute of Tao.
+
+Wherein did the ancients prize this Tao?
+
+Did they not say, 'to search for the guilty ones and pardon them'?
+
+Therefore is (tao) the treasure of the world."
+array[486]="Chapter 63 (六十三章)\n
+为无为，事无事，味无味。大小多少，报怨以德。图难于其易；为大于其细。天下难事，必作于易；天下大事，必作于细。是以圣人终不为大，故能成其大。夫轻诺必寡信，多易必多难。是以圣人犹难之，故终无难矣。\n
+
+Accomplish do-nothing.
+
+Attend to no-affairs.
+
+Taste the flavorless.
+
+Whether it is big or small, many or few,
+
+Requite hatred with virtue.
+
+Deal with the difficult while yet it is easy;
+
+Deal wit the big while yet it is small.
+
+The difficult (problems) of the world
+
+Must be dealt with while they are yet easy;
+
+The great (problems) of the world
+
+Must be dealt with while they are yet small.
+
+Therefore the Sage by never dealing with great (problems)
+
+Accomplishes greatness.
+
+He who lightly makes a promise
+
+Will find it often hard to keep his faith.
+
+He who makes light of many things
+
+Will encounter many difficulties.
+
+Hence even the Sage regards things as difficult,
+
+And for that reason never meets with difficulties."
+array[487]="Chapter 64 (六十四章)\n
+其安易持；其未兆易谋；其脆易泮；其微易散。为之于未有，治之于未乱。合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。为者败之；持者失之。是以，圣人无为，故无败；无持，故无失。民之从事，常于几成而败之。慎终如始，则无败事。是以圣人欲不欲，不贵难得之货，学不学，复众人之所过。以辅万物自然而不敢为。\n
+
+That which lies still is easy to hold;
+
+That which is not yet manifest is easy to forestall;
+
+That which is brittle (like ice) easily melts;
+
+That which is minute easily scatters.
+
+Deal with a thing before it is there;
+
+Check disorder before it is rife.
+
+A tree with a full span's girth begins from a tiny sprout;
+
+A nine-storied terrace begins with a clod of earth.
+
+A journey of a thousand li beings at one's feet.
+
+He who acts, spoils;
+
+He who grasps, lets slip.
+
+Because the Sage does not act, he does not spoil,
+
+Because he does not grasp, he does not let slip.
+
+The affairs of men are often spoiled within an ace of
+
+completion.
+
+By being careful at the end as at the beginning
+
+Failure is averted.
+
+Therefore the Sage desires to have no desire,
+
+And values not objects difficult to obtain.
+
+Learns that which is unlearned,
+
+And restores what the multitude have lost.
+
+That he may assist in the course of Nature
+
+And not presume to interfere."
+array[488]="Chapter 65 (六十五章)\n
+古之善为道者，非以明民，将以愚之。民之难治，以其智多。故以智治国，国之贼；不以智治国，国之福。知此两者亦稽式。常知稽式，是谓玄德。玄德深矣，远矣，与物反矣，然后乃至大顺。\n
+
+The ancients who knew how to follow the Tao
+
+Aimed not to enlighten the people.,
+
+But to keep them ignorant.
+
+The reason it is difficult for the people to leave in peace
+
+Is because of too much knowledge.
+
+Those who seek to rule a country by knowledge
+
+Are the nation's curse.
+
+Those who seek not to rule a country by knowledge
+
+Are the nation's blessing.
+
+Those who know these two (principles)
+
+Also know the ancient standard,
+
+And to know always the ancient standard
+
+Is called the Mystic Virtue.
+
+When the Mystic Virtue becomes clear, far-reaching,
+
+And things revert back (to their source)
+
+Then and then only emerges the Grand Harmony."
+array[489]="Chapter 66 (六十六章)\n
+江海所以能为百谷王者，以其善下之，故能为百谷王。是以圣人欲上民，必以言下之；欲先民，必以身后之。是以圣人居上而民不重，居前而民不害。是以天下乐推而不厌。以其不争，故天下莫能与之争。\n
+
+How did the great rivers and seas become the Lords
+
+of the ravines?
+
+By being good at keeping low.
+
+That was how they became Lords of the Ravines.
+
+Therefore in order to be the chief among the people,
+
+One must speak like their inferiors.
+
+In order to be foremost among the people,
+
+One must walk behind them.
+
+Thus it is that the Sage stays above,
+
+And the people do not feel his weight;
+
+Walks in front,
+
+And the people do not wish him harm.
+
+Then the people of the world are glad to uphold him forever.
+
+Because he does not contend,
+
+No one in the world can contend against him."
+array[490]="Chapter 67 (六十七章)\n
+天下皆谓我道大，似不肖。夫唯大，故似不肖。若肖，久矣其细也夫！我有三宝，持而保之：一曰慈，二曰俭，三曰不敢为天下先。慈，故能勇；俭，故能广；不敢为天下先，故能成器长。今舍慈且勇，舍俭且广，舍后且先，死矣。夫慈，以战则胜，以守则固。天将救之，以慈卫之。\n
+
+All the world says: my teaching (Tao) greatly resembles folly.
+
+Because it is great; therefore it resembles folly.
+
+If it did not resemble folly,
+
+It would have long ago become petty indeed!
+
+I have Three Treasures;
+
+Guard them and keep them safe:
+
+the first is Love.
+
+The second is, Never too much.
+
+The third is, Never be the first in the world.
+
+Through Love, one has no fear;
+
+Through not doing too much, one has amplitude
+
+(of reserve power);
+
+Through not presuming to be the first in the world,
+
+One can develop one's talent and let it mature.
+
+If one forsakes love and fearlessness,
+
+forsakes restraint and reserve power,
+
+forsakes following behind and rushes in front,
+
+He is doomed!
+
+For love is victorious in attack,
+
+And invulnerable in defense.
+
+Heaven arms with love
+
+Those it would not see destroyed."
+array[491]="Chapter 68 (六十八章)\n
+善为士者，不武。善战者，不怒。善胜敌者，不与。善用人者，为之下。是谓不争之德，是谓用人之力，是谓配天，古之极。\n
+
+The brave soldier is not violent;
+
+The good fighter does not lose his temper;
+
+The great conqueror does not fight (on small issues);
+
+The good user of men places himself below others.
+
+This is the virtue of not-contending,
+Is called the capacity to use men,
+
+Is reaching to the height of being
+
+Mated to Heaven, to what was of old."
+array[492]="Chapter 70 (六十九章)\n
+用兵有言：「吾不敢为主，而为客；不敢进寸，而退尺。」是谓行无行，攘无臂，执无兵，乃无敌矣。祸莫大于轻敌，轻敌几丧吾宝。故抗兵相若，哀者胜矣。\n
+
+There is the maxim of military strategists;
+
+I dare not be the first to invade, but rather be the invaded.
+
+Dare not press forward an inch, but rather retreat a foot.
+
+That is, to march without formations,
+
+To roll up the sleeves,
+
+To charge not in frontal attacks,
+
+To arm without weapons.
+
+There is no greater catastrophe than to underestimate the enemy.
+
+To underestimate the enemy might entail the loss of my treasures.
+
+Therefore when two equally matched armies meet,
+
+It is the man of sorrow who wins."
+array[493]="Chapter 71 (七十章)\n
+吾言甚易知，甚易行。天下莫能知，莫能行。言有宗，事有君。夫唯无知，是以不我知。知我者希，则我者贵。是以圣人被褐而怀玉。\n
+
+My teachings are very easy to understand
+
+and very easy to practice,
+
+But no one can understand them and
+
+no one can practice them.
+
+In my words there is a principle.
+
+In the affairs of men there is a system.
+
+Because they know not these,
+
+They also know me not.
+
+Since there are few that know me,
+
+Therefore I am distinguished.
+
+Therefore the Sage wears a coarse cloth on top
+
+And carries jade within his bosom."
+array[494]="Chapter 71 (七十一章)\n
+知不知，上，不知不知，病。圣人不病，以其病病，是以不病。\n
+
+Who knows that he does not know is the highest;
+
+Who (pretends to) know what he does not know is sick-minded.
+
+And who recognizes sick-mindedness as sick-mindedness
+
+is not sick-minded.
+
+The Sage is not sick-minded.
+
+Because he recognizes sick-mindedness as sick-mindness,
+
+Therefore he is not sick-minded."
+array[495]="Chapter 72 (七十二章)\n
+民不畏威，则大威至。无狎其所居，无厌其所生。夫唯不厌，是以不厌。是以圣人自知不自见，自爱不自贵。故去彼取此。\n
+
+When people have no fear of force,
+
+Then (as is the common practice) great force descends
+
+upon them.
+
+Despise not their dwellings,
+
+Dislike not their progeny.
+
+Because you do not dislike them,
+
+You will not be disliked yourself.
+
+Therefore the Sage knows himself, but does not show himself,
+
+Loves himself, but does not exalt himself.
+
+Therefore he rejects the one (force) and
+
+accepts the other (gentility)."
+array[496]="Chapter 73 (七十三章)\n
+勇于敢，则杀，勇于不敢，则活。此两者，或利或害。天之所恶，孰知其故？天之道，不争而善胜，不言而善应，不召而自来，姗然而善谋。天网恢恢，疏而不失。\n
+
+Who is brave in daring (you) kill,
+
+Who is brave in not daring (you) let live.
+
+In these two,
+
+There is some advantage and some disadvantage.
+
+(Even if) Heaven dislikes certain people,
+
+Who would know (who are to be killed and) why?
+
+Therefore even the Sage regards it as a difficult question.
+
+Heaven's Way (Tao) is good at conquest without strife,
+
+Rewarding (vice and virtue) without words,
+
+Making its appearance without call,
+
+Achieving results without obvious design.
+
+The heaven's net is broad and wide.
+
+With big meshes, yet letting nothing slip through."
+array[497]="Chapter 74 (七十四章)\n
+民不畏死，奈何以死惧之？若使民常畏死，而为奇者，吾得执而杀之，孰敢？常有司杀者杀。夫代司杀者杀，是谓代大匠斫。夫代大匠斫者，希有不伤其手矣。\n
+
+The people are not afraid of death;
+
+Why threaten them with death?
+
+Supposing that the people
+
+are afraid of death,
+
+And we can seize and kill the unruly,
+
+Who would dare to do so?
+
+Often it happens that the executioner is killed.
+
+And to take the place ofthe executioner
+
+Is like handling the hatchet for the master carpenter.
+
+He who handles the hatchet for the master carpenter
+
+seldom escapes injury to his hands."
+array[498]="Chapter 75 (七十五章)\n
+民之饥，以其上食税之多，是以饥。民之不治，以其上之有为，是以不治。民之轻死，以其上求生之厚，是以轻死。夫唯无以生为者，是贤于贵生。\n
+
+When people are hungry,
+
+It is because their rulers eat too much tax-grain.
+
+Therefore the unruliness of hungry people
+
+Is due to the interference of their rulers.
+
+That is why they are unruly.
+
+The people are not afraid of death,
+
+Because they are anxious to make a living.
+
+That is why they are not afraid of death.
+
+It is those who interfere not with their living
+
+That are wise in exalting life."
+array[499]="Chapter 76 (七十六章)\n
+人之生也柔弱，其死也坚强。草木之生也柔脆，其死也枯槁。故坚强者死之徒，柔弱者生之徒。是以兵强则灭，木强则折，强大居下，柔弱居上。\n
+
+When man is born, he is tender and weak;
+
+At death, he is hard and stiff.
+
+When the things and plants are alive, they are soft
+
+and supple;
+
+When they are dead, they are brittle and dry.
+
+Therefore hardness and stiffness are the companions of
+
+death,
+
+And softness and gentleness are the companions of life.
+
+Therefore when an army is headstrong, it will lose in a battle.
+
+When a tree is hard, it will be cut down.
+
+The big and strong belong underneath.
+
+The gentle and weak belong at the top."
+array[500]="Chapter 77 (七十七章)\n
+天之道，其犹张弓欤？高者抑之，下者举之，有馀者损之，不足者补之。天之道，损有馀而补不足。人之道，则不然：损不足以奉有馀。孰能有馀以奉天下？唯有道者。是以圣人为而不恃，功成而不居，其不欲见贤。\n
+
+The Tao (way) of Heaven,
+
+Is it not like the bending of a bow?
+
+The top comes down and the bottom-end goes up,
+
+The extra (length) is shortened, the insufficient (width)
+
+is expanded.
+
+It is the way of Heaven to take away from those that have toomuch
+
+And give to those that have not enough.
+
+Not so with man's way:
+
+He takes from those that have not
+
+And gives it as tribute to those that have too much.
+
+Who can have enough and to spare to give to the entire world?
+
+Only the man of Tao.
+
+Therefore the Sage acts, but does not possess,
+
+Accomplishes but lays claim to no credit,
+
+Because he has no wish to seem superior."
+array[501]="Chapter 78 (七十八章)\n
+天下莫柔弱于水，而攻坚强者莫之能胜，以其无以易之。弱之胜强，柔之胜刚，天下莫不知，莫能行。是以圣人云：「受国之垢，是谓社稷主；受国不祥，是为天下王。」正言若反。\n
+
+There is nothing weaker than water
+
+But none is superior to it in overcoming the hard,
+
+For which there is no substitute.
+
+That weakness overcomes strength
+
+And gentleness overcomes rigidity,
+
+No one does not know;
+
+No one can put into practice.
+
+Therefore the Sage says:
+
+'Who receives unto himself the calumny of the world
+
+Is the preserver of the state.
+
+Who bears himself the sins of the world
+
+Is king of the world.'
+
+Straight words seem crooked."
+array[502]="Chapter 79 (七十九章)\n
+和大怨，必有馀怨，安可以为善？是以圣人执左契而不责于人。有德司契，无德司彻。天道无亲，恒与善人。\n
+
+Patching up a great hatred is sure to leave some hatred behind.
+
+How can this be regarded as satisfactory?
+
+Therefore the Sage holds the left tally,
+
+And does not put the guilt on the other party.
+
+the virtuous man is for patching up;
+
+The vicious is for fixing guilt.
+
+But 'the way of Heaven is impartial;
+
+It sides only with the good man.'"
+array[503]="Chapter 80 (八十章)\n
+小邦寡民。使有什伯之器而不用；使民重死而不远徙。虽有舟舆，无所乘之；虽有甲兵，无所陈之。使民复结绳而用之。甘其食，美其服，安其居，乐其俗。邻邦相望，鸡犬之声相闻，民至老死，不相往来。\n
+
+(Let there be) a small country with a small population,
+
+Where the supply of goods are tenfold or hundredfold,
+
+more than they can use.
+
+Let the people value their lives and not migrate far.
+
+Though there be boats and carriages,
+
+None be there to ride them.
+
+Though there be armor and weapons,
+
+No occasion to display them.
+
+Let the people again tie ropes for reckoning,
+
+Let them enjoy their food,
+
+Beautify their clothing,
+
+Be satisfied with their homes,
+
+Delight in their customs.
+
+The neighboring settlements overlook one another
+
+So that they can hear the barking of dogs and crowing
+
+of cocks of their neighbors,
+
+And the people till the end of their days shall never
+
+have been outside their country."
+array[504]="Chapter 81 (八十一章)\n
+信言不美，美言不信。善者不辩，辩者不善。知者不博，博者不知。圣人不积，既以为人己愈有，既以与人己愈多。天之道，利而不害；圣人之道，为而不争。\n
+
+True words are not fine-sounding;
+
+Fine-sounding words are not true.
+
+A good man does not argue;
+
+he who argues is not a good man.
+
+the wise one does not know many things;
+
+He who knows many things is not wise.
+
+The Sage does not accumulate (for himself).
+
+He lives for other people,
+
+And grows richer himself;
+
+He gives to other people,
+
+And has greater abundance.
+
+The Tao of Heaven"
+
+# Font colour array values (https://linuxhandbook.com/change-echo-output-color/)
+
+## Light Gray
+array2[0]="\033[01;37;3m"
+
+## Red
+array2[1]="\033[00;31;3m"
+
+## Light Red
+array2[2]="\033[01;31;3m"
+
+## Green
+array2[3]="\033[00;32;3m"
+
+## Light Green
+array2[4]="\033[01;32;3m"
+
+## Brown/Orange
+array2[5]="\033[00;33;3m"
+
+## Yellow
+array2[6]="\033[01;33;3m"
+
+## Blue
+array2[7]="\033[00;34;3m"
+
+## Light blue
+array2[8]="\033[01;34;3m"
+
+## Purple
+array2[9]="\033[00;35;3m"
+
+## Light Purple
+array2[10]="\033[01;35;3m"
+
+## Cyan
+array2[11]="\033[00;36;3m"
+
+## Light Cyan
+array2[12]="\033[01;36;3m"
+
+## End
+e="\033[0m"
+
+# Quote array
+size=${#array[@]}
+index=$(($RANDOM % $size))
+quote=$(echo ${array[$index]})
+
+# Font colour array
+size2=${#array2[@]}
+index2=$(($RANDOM % $size2))
+colour=$(echo ${array2[$index2]})
+
+colour() {
+if [[ "$index" -le 423 ]];then
+echo -e "${colour} The Dhammapada ~${e}"
+echo -e " ${colour}$quote${e}" | fmt -s
+elif [[ "$index" -gt 423 ]];then
+echo -e "${colour} Dao De jing ~${e}"
+echo -e " ${colour}$quote${e}" | fmt -s
+fi
+}
+
+no_colour() {
+if [[ "$index" -le 423 ]];then
+echo -e "The Dhammapada ~"
+echo -e " $quote" | fmt -s
+elif [[ "$index" -gt 423 ]];then
+echo -e "Dao De jing ~"
+echo -e " $quote" | fmt -s
+fi
+}
+
+dhammapada() {
+size="423"
+index=$(($RANDOM % $size))
+quote=$(echo ${array[$index]})
+echo -e "The Dhammapada ~"
+echo -e " $quote" | fmt -s
+}
+
+dhammapada_colour() {
+size="423"
+index=$(($RANDOM % $size))
+quote=$(echo ${array[$index]})
+echo -e "${colour} The Dhammapada ~${e}"
+echo -e " ${colour}$quote${e}" | fmt -s
+}
+
+dao_de_jing() {
+index=$(shuf -i 424-504 -n 1)
+quote=$(echo ${array[$index]})
+echo -e "Dao De jing ~"
+echo -e " $quote" | fmt -s
+}
+
+dao_de_jing_colour() {
+index=$(shuf -i 424-504 -n 1)
+quote=$(echo ${array[$index]})
+echo -e "${colour} Dao De jing ~${e}"
+echo -e " ${colour}$quote${e}" | fmt -s
+}
+
+help() {
+echo -e "\nUsage: wisdom [option]
+
+Options:\n
+c    -> Print any random quote in colour\n
+n    -> Print any random quote without colour\n
+d    -> Print random Dhammapada quote without colour\n
+dc   -> Print random Dhammapada quote with colour\n
+j    -> Print random Dao De jing quote without colour\n
+jc   -> Print random Dao De jing quote with colour\n
+h    -> Show this help message\n"
+}
+
+case $1 in
+    c)
+    colour
+    ;;
+    n)
+    no_colour
+    ;;
+    d)
+    dhammapada
+    ;;
+    dc)
+    dhammapada_colour
+    ;;
+    j)
+    dao_de_jing
+    ;;
+    jc)
+    dao_de_jing_colour
+    ;;
+    h)
+    help
+    ;;
+    *)
+    help
+esac
