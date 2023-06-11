@@ -7,7 +7,9 @@
 
 ![Example output](/example/example.png)
 ## Installation
-Simply clone or download the script to the directory of your choice and make it executable. 
+Simply clone or download the script to the directory of your choice and make it executable.  
+The script is now also available in the [AUR](https://aur.archlinux.org/packages/eastern-wisdom-cli)!
+To install, simply yay -S ``eastern-wisdom-cli`` (or ``paru -S`` if you use paru).
 ## Usage
 ```
 wisdom [option]
