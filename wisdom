@@ -3019,7 +3019,7 @@ h    -> Show this help message\n
 Dhammapada text from: \e[1;4m\e]8;;https://www.gutenberg.org/ebooks/2017\aGutenberg\e]8;;\a\033[0m
 Dao De Jing text from: \e[1;4m\e]8;;https://github.com/qiutian00/Tao-and-Teh/blob/master/source/Tao-and-Teh-en.md\aTao-and-Teh\e]8;;\a\033[0m\n
 MIT license
-Copyright (c) 2023 \e[1;4m\e]8;;https://raw.githubusercontent.com/muvment/wisdom-cli/main/LICENSE\amuvment\e]8;;\a\033[0m\n"
+Copyright (c) 2023 \e[1;4m\e]8;;https://raw.githubusercontent.com/muvment/eastern-wisdom-cli/main/LICENSE\amuvment\e]8;;\a\033[0m\n"
 }
 
 case $1 in
