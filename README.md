@@ -1,4 +1,4 @@
-# wisdom-cli
+# wisdom-quote-cli
 ## Get a random quote from the Dhammapada or the Dao De jing in your teminal, with optional color output
 #### *improvements and suggestions welcome*  
 - Script inspired by [fortune-mod-dhammapada](https://github.com/cpriyank/fortune-mod-dhammapada)  
@@ -12,7 +12,7 @@ Simply clone or download the script to the directory of your choice and make it 
 ```
 wisdom [option]
 
-Options:\n
+Options:
 c    -> Print any random quote in colour
 n    -> Print any random quote without colour
 d    -> Print random Dhammapada quote without colour
